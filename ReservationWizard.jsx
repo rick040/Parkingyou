@@ -5,6 +5,15 @@ const PY_WIZARD_STEPS = [
   { id: 4, label: 'Bevestiging' },
 ];
 
+// Save a new reservation to localStorage
+const saveReservation = (reservation) => {
+  try {
+    const existing = JSON.parse(localStorage.getItem('py_reservations') || '[]');
+    existing.unshift(reservation);
+    localStorage.setItem('py_reservations', JSON.stringify(existing));
+  } catch {}
+};
+
 const PY_AVAILABILITY = {
   'dll-parkeerdek': { status: 'available', spaces: 34, label: 'Veel plekken' },
   'philips-bedrijfsschool': { status: 'available', spaces: 78, label: 'Ruim beschikbaar' },
@@ -127,8 +136,32 @@ const PYReservationWizardPage = () => {
     if (avail?.status !== 'full') setSelectedGarageId(id);
   };
 
+  const [reservationId, setReservationId] = React.useState('');
+  
   const handleFinalSubmit = (e) => {
     e.preventDefault();
+    const newId = `R-${Date.now()}`;
+    setReservationId(newId);
+    
+    // Save the reservation
+    const formatDate = (dateStr) => {
+      const d = new Date(dateStr);
+      const days = ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'];
+      const months = ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
+      return `${days[d.getDay()]} ${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+    };
+    
+    saveReservation({
+      id: newId,
+      garage: selectedGarage?.name || '',
+      city: selectedGarage?.city || '',
+      date: formatDate(date),
+      time: `${startTime} - ${endTime}`,
+      price: discountPrice,
+      status: 'upcoming',
+      kenteken: plate
+    });
+    
     setDone(true);
     setStep(4);
   };
@@ -294,7 +327,7 @@ const PYReservationWizardPage = () => {
             <div className="py-wizard-done">
               <div className="py-wizard-done__icon"><PYIcon name="check" size={36} /></div>
               <h2>Je plek staat klaar!</h2>
-              <p>Reserveringsnummer <strong>R-{Math.floor(Math.random() * 90000) + 10000}</strong> is bevestigd. Je ontvangt een e-mail op <strong>{email}</strong> met alle details, je QR-code en kentekeninstructies.</p>
+              <p>Reserveringsnummer <strong>{reservationId || `R-${Math.floor(Math.random() * 90000) + 10000}`}</strong> is bevestigd. Je ontvangt een e-mail op <strong>{email}</strong> met alle details, je QR-code en kentekeninstructies.</p>
               <div className="py-wizard-done__summary">
                 <div><span>Locatie</span><strong>{selectedGarage?.name}</strong></div>
                 <div><span>Datum</span><strong>{date}</strong></div>
@@ -394,8 +427,15 @@ const PYReservationWizardPage = () => {
                 Volgende stap
               </PYButton>
             ) : (
-              <PYButton type="submit" variant="primary" className="py-button--primary"
-                onClick={() => { if (canProceedStep3) { setDone(true); setStep(4); } }}
+              <PYButton 
+                type="button" 
+                variant="primary"
+                onClick={() => { 
+                  if (canProceedStep3) { 
+                    setDone(true); 
+                    setStep(4); 
+                  } 
+                }}
                 disabled={!canProceedStep3}
               >
                 Reservering afronden

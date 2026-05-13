@@ -7,13 +7,22 @@ const PY_MOCK_USER = {
   memberSince: 'maart 2022',
 };
 
-const PY_MOCK_RESERVATIONS = [
-  { id: 'R-20250318', garage: 'P2 Mandela', city: 'Eindhoven', date: 'ma 18 mrt 2025', time: '09:00 – 17:00', price: '12,00', status: 'upcoming', kenteken: 'AB-123-C' },
-  { id: 'R-20250301', garage: 'P1 Carlton', city: 'Amsterdam', date: 'za 1 mrt 2025', time: '10:00 – 19:00', price: '22,00', status: 'upcoming', kenteken: 'AB-123-C' },
-  { id: 'R-20250214', garage: 'Parking DLL parkeerdek', city: 'Eindhoven', date: 'vr 14 feb 2025', time: '09:00 – 18:00', price: '10,00', status: 'completed', kenteken: 'AB-123-C' },
-  { id: 'R-20250131', garage: 'Philips Stadion', city: 'Eindhoven', date: 'vr 31 jan 2025', time: '18:00 – 23:00', price: '12,00', status: 'completed', kenteken: 'AB-123-C' },
-  { id: 'R-20250110', garage: 'Havenkwartier', city: 'Rotterdam', date: 'vr 10 jan 2025', time: '09:00 – 17:00', price: '13,00', status: 'completed', kenteken: 'AB-123-C' },
-];
+// Get stored reservations from localStorage or use defaults
+const getStoredReservations = () => {
+  try {
+    const stored = localStorage.getItem('py_reservations');
+    if (stored) return JSON.parse(stored);
+  } catch {}
+  return [
+    { id: 'R-20250318', garage: 'P2 Mandela', city: 'Eindhoven', date: 'ma 18 mrt 2025', time: '09:00 - 17:00', price: '12,00', status: 'upcoming', kenteken: 'AB-123-C' },
+    { id: 'R-20250301', garage: 'P1 Carlton', city: 'Amsterdam', date: 'za 1 mrt 2025', time: '10:00 - 19:00', price: '22,00', status: 'upcoming', kenteken: 'AB-123-C' },
+    { id: 'R-20250214', garage: 'Parking DLL parkeerdek', city: 'Eindhoven', date: 'vr 14 feb 2025', time: '09:00 - 18:00', price: '10,00', status: 'completed', kenteken: 'AB-123-C' },
+    { id: 'R-20250131', garage: 'Philips Stadion', city: 'Eindhoven', date: 'vr 31 jan 2025', time: '18:00 - 23:00', price: '12,00', status: 'completed', kenteken: 'AB-123-C' },
+    { id: 'R-20250110', garage: 'Havenkwartier', city: 'Rotterdam', date: 'vr 10 jan 2025', time: '09:00 - 17:00', price: '13,00', status: 'completed', kenteken: 'AB-123-C' },
+  ];
+};
+
+const PY_MOCK_RESERVATIONS = getStoredReservations();
 
 const PY_MOCK_SUBSCRIPTIONS = [
   { id: 'ABO-4421', garage: 'Parking Philips Bedrijfsschool', city: 'Eindhoven', startDate: '1 januari 2025', price: '49,00/mnd', status: 'active', access: 'Keycard' },
@@ -32,12 +41,26 @@ const PY_MOCK_TRANSACTIONS = [
   { date: 'vr 10 jan 2025', description: 'Parkeren Havenkwartier, Rotterdam', points: +13, total: 246 },
 ];
 
-const PYDashboardPage = () => {
+const PYDashboardPage = ({ auth = {} }) => {
   const [activeSection, setActiveSection] = React.useState('overview');
   const [editMode, setEditMode] = React.useState(false);
   const [saved, setSaved] = React.useState(false);
-  const upcoming = PY_MOCK_RESERVATIONS.filter(r => r.status === 'upcoming');
-  const past = PY_MOCK_RESERVATIONS.filter(r => r.status === 'completed');
+  const [reservations, setReservations] = React.useState(getStoredReservations);
+  
+  // Refresh reservations when section changes (to catch new ones)
+  React.useEffect(() => {
+    setReservations(getStoredReservations());
+  }, [activeSection]);
+  
+  const upcoming = reservations.filter(r => r.status === 'upcoming');
+  const past = reservations.filter(r => r.status === 'completed');
+  
+  const cancelReservation = (id) => {
+    if (!confirm('Weet je zeker dat je deze reservering wilt annuleren?')) return;
+    const updated = reservations.filter(r => r.id !== id);
+    setReservations(updated);
+    try { localStorage.setItem('py_reservations', JSON.stringify(updated)); } catch {}
+  };
 
   const sections = [
     { id: 'overview', label: 'Overzicht', icon: 'car' },
@@ -69,6 +92,27 @@ const PYDashboardPage = () => {
           </nav>
           <div className="py-dashboard__sidebar-cta">
             <PYButton href="#/reserveren" variant="primary">Nieuwe reservering</PYButton>
+            <button 
+              onClick={() => auth.logout && auth.logout()}
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                gap: 8, 
+                width: '100%',
+                marginTop: 10,
+                padding: '12px 16px',
+                border: 0,
+                borderRadius: 999,
+                background: 'transparent',
+                fontSize: 14, 
+                fontWeight: 700, 
+                color: 'var(--py-muted)',
+                cursor: 'pointer'
+              }}
+            >
+              <PYIcon name="x" size={16} /> Uitloggen
+            </button>
           </div>
         </aside>
 
@@ -338,8 +382,8 @@ const PYDashboardPage = () => {
               <div className="py-account-danger">
                 <h3>Account beheer</h3>
                 <div className="py-danger-actions">
-                  <button className="py-danger-link">Wachtwoord wijzigen</button>
-                  <button className="py-danger-link">Account verwijderen</button>
+<button className="py-danger-link" onClick={() => alert('In een echte app zou je hier je wachtwoord kunnen wijzigen.')}>Wachtwoord wijzigen</button>
+                <button className="py-danger-link" onClick={() => { if(confirm('Weet je zeker dat je je account wilt verwijderen?')) { auth.logout && auth.logout(); } }}>Account verwijderen</button>
                 </div>
               </div>
             </div>

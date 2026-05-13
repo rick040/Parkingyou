@@ -460,6 +460,7 @@ const PYBusinessContactForm = () => {
 const PYGlowPage = () => {
   const [ticket, setTicket] = React.useState('weekend');
   const [done, setDone] = React.useState(false);
+  const [glowNewsletter, setGlowNewsletter] = React.useState(false);
   return (
     <main>
       <section className="py-glow-hero">
@@ -507,7 +508,13 @@ const PYGlowPage = () => {
       <section className="py-section">
         <div className="py-container py-newsletter-band">
           <div><h2>Blijf op de hoogte van evenementen.</h2><p>Ontvang parkeertips en toekomstige acties, inclusief korting op je volgende parkeerplek.</p></div>
-          <form onSubmit={(e) => e.preventDefault()}><input placeholder="E-mailadres" /><PYButton type="submit" variant="primary">Inschrijven</PYButton></form>
+          {glowNewsletter ? (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 20px', background: 'var(--py-aqua)', borderRadius: 999, color: 'var(--py-blue)', fontWeight: 700 }}>
+              <PYIcon name="check" size={18} /> Ingeschreven!
+            </div>
+          ) : (
+            <form onSubmit={(e) => { e.preventDefault(); setGlowNewsletter(true); }}><input required placeholder="E-mailadres" /><PYButton type="submit" variant="primary">Inschrijven</PYButton></form>
+          )}
         </div>
       </section>
     </main>

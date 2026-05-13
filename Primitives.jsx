@@ -3,6 +3,92 @@ const PY_DEEP = '#0d142e';
 const PY_AQUA = '#79cadc';
 const PY_ORANGE = '#ee7d2c';
 
+// Toast notification system
+const ToastContext = React.createContext({ showToast: () => {} });
+
+const useToast = () => React.useContext(ToastContext);
+
+const PYToastProvider = ({ children }) => {
+  const [toasts, setToasts] = React.useState([]);
+  
+  const showToast = React.useCallback((message, type = 'success') => {
+    const id = Date.now();
+    setToasts(t => [...t, { id, message, type }]);
+    setTimeout(() => {
+      setToasts(t => t.filter(toast => toast.id !== id));
+    }, 4000);
+  }, []);
+
+  return (
+    <ToastContext.Provider value={{ showToast }}>
+      {children}
+      <div style={{
+        position: 'fixed',
+        bottom: 24,
+        right: 24,
+        zIndex: 9999,
+        display: 'grid',
+        gap: 10
+      }}>
+        {toasts.map(toast => (
+          <div 
+            key={toast.id}
+            style={{
+              padding: '14px 20px',
+              borderRadius: 'var(--py-radius)',
+              background: toast.type === 'success' ? '#1a7a50' : toast.type === 'error' ? '#b83232' : 'var(--py-blue)',
+              color: 'white',
+              fontWeight: 700,
+              fontSize: 14,
+              boxShadow: '0 12px 28px rgba(0,0,0,0.2)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+              animation: 'slideIn 300ms ease'
+            }}
+          >
+            <PYIcon name={toast.type === 'success' ? 'check' : toast.type === 'error' ? 'x' : 'info'} size={18} />
+            {toast.message}
+          </div>
+        ))}
+      </div>
+      <style>{`
+        @keyframes slideIn {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+      `}</style>
+    </ToastContext.Provider>
+  );
+};
+
+// Simple auth state management
+const useAuth = () => {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(() => {
+    try {
+      return localStorage.getItem('py_logged_in') === 'true';
+    } catch {
+      return false;
+    }
+  });
+
+  const login = React.useCallback(() => {
+    setIsLoggedIn(true);
+    try { localStorage.setItem('py_logged_in', 'true'); } catch {}
+  }, []);
+
+  const logout = React.useCallback(() => {
+    setIsLoggedIn(false);
+    try { localStorage.removeItem('py_logged_in'); } catch {}
+    window.location.hash = '#/';
+  }, []);
+
+  return { isLoggedIn, login, logout };
+};
+
+// Global auth context
+const AuthContext = React.createContext({ isLoggedIn: false, login: () => {}, logout: () => {} });
+
 const PY_GARAGES = [
   {
     id: 'dll-parkeerdek',
@@ -632,4 +718,5 @@ Object.assign(window, {
   PY_BLUE, PY_DEEP, PY_AQUA, PY_ORANGE,
   PY_GARAGES, PY_CITIES, PY_PRODUCTS, PY_FAQS, PY_EVENTS,
   PYIcon, PYLogo, PYButton, PYPriceBlob, PYTag, PYSectionIntro, PYMiniMap,
+  useAuth, AuthContext, useToast, ToastContext, PYToastProvider,
 });

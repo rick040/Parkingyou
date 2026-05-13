@@ -23,6 +23,7 @@ const PYEventCard = ({ event }) => (
 const PYEventsPage = () => {
   const [filterCity, setFilterCity] = React.useState('Alle steden');
   const [filterType, setFilterType] = React.useState('Alle types');
+  const [alertSubmitted, setAlertSubmitted] = React.useState(false);
 
   const types = ['Alle types', ...Array.from(new Set(PY_EVENTS.map(e => e.type)))];
   const cities = ['Alle steden', ...Array.from(new Set(PY_EVENTS.map(e => e.city)))];
@@ -98,10 +99,16 @@ const PYEventsPage = () => {
             <h2>Evenement op de planning?</h2>
             <p>Schrijf je in voor onze evenementenalert en ontvang parkeerdeals voordat ze uitverkocht zijn.</p>
           </div>
-          <form onSubmit={e => e.preventDefault()} style={{ display: 'flex', gap: 10 }}>
-            <input style={{ padding: '13px 18px', borderRadius: 999, border: '1px solid rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.12)', color: 'white', minWidth: 240 }} placeholder="jij@voorbeeld.nl" />
-            <PYButton type="submit" variant="aqua">Alert instellen</PYButton>
-          </form>
+          {alertSubmitted ? (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 20px', background: 'rgba(255,255,255,0.12)', borderRadius: 999, color: 'white' }}>
+              <PYIcon name="check" size={18} /> Alert ingesteld! We houden je op de hoogte.
+            </div>
+          ) : (
+            <form onSubmit={e => { e.preventDefault(); setAlertSubmitted(true); }} style={{ display: 'flex', gap: 10 }}>
+              <input required style={{ padding: '13px 18px', borderRadius: 999, border: '1px solid rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.12)', color: 'white', minWidth: 240 }} placeholder="jij@voorbeeld.nl" />
+              <PYButton type="submit" variant="aqua">Alert instellen</PYButton>
+            </form>
+          )}
         </div>
       </section>
     </main>
@@ -113,6 +120,7 @@ const PYEventDetailPage = ({ id }) => {
   const [ticket, setTicket] = React.useState(event.ticketTypes?.[0]?.id || '');
   const [date, setDate] = React.useState('');
   const [done, setDone] = React.useState(false);
+  const [newsletterSubmitted, setNewsletterSubmitted] = React.useState(false);
 
   const eventGarages = PY_GARAGES.filter(g => event.garageIds?.includes(g.id));
   const selectedTicket = event.ticketTypes?.find(t => t.id === ticket);
@@ -235,10 +243,16 @@ const PYEventDetailPage = ({ id }) => {
             <h2>Mis geen enkel evenement meer.</h2>
             <p>Ontvang parkeertips en vroegboekaanbiedingen voor toekomstige evenementen in jouw stad.</p>
           </div>
-          <form onSubmit={e => e.preventDefault()}>
-            <input placeholder="E-mailadres" />
-            <PYButton type="submit" variant="primary">Inschrijven</PYButton>
-          </form>
+{newsletterSubmitted ? (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 20px', background: 'var(--py-aqua)', borderRadius: 999, color: 'var(--py-blue)', fontWeight: 700 }}>
+              <PYIcon name="check" size={18} /> Ingeschreven! Je ontvangt onze updates.
+            </div>
+          ) : (
+            <form onSubmit={e => { e.preventDefault(); setNewsletterSubmitted(true); }}>
+              <input required placeholder="E-mailadres" />
+              <PYButton type="submit" variant="primary">Inschrijven</PYButton>
+            </form>
+          )}
         </div>
       </section>
     </main>

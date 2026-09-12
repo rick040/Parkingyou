@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "eindhoven",
+    "naam": "Eindhoven",
+    "intro": "Parkeer centraal in Eindhoven en loop zo het centrum in. Reserveer vooraf, dan weet je zeker dat er een plek voor je is.",
+    "isRegio": false,
+    "coordinaten": { "lat": 51.43781, "lng": 5.48417 },
+    "oudeCid": 3
+  },
+  {
+    "slug": "amsterdam",
+    "naam": "Amsterdam",
+    "intro": "{{TODO-NL: introtekst Amsterdam schrijven, nu nog niet ingevuld}}",
+    "isRegio": false,
+    "coordinaten": { "lat": 52.3676, "lng": 4.9041 },
+    "oudeCid": 1
+  },
+  {
+    "slug": "rotterdam",
+    "naam": "Rotterdam",
+    "intro": "{{TODO-NL: introtekst Rotterdam schrijven, nu nog niet ingevuld}}",
+    "isRegio": false,
+    "coordinaten": { "lat": 51.9244, "lng": 4.4777 },
+    "oudeCid": 5
+  },
+  {
+    "slug": "tilburg",
+    "naam": "Tilburg",
+    "intro": "{{TODO-NL: introtekst Tilburg schrijven, nu nog niet ingevuld}}",
+    "isRegio": false,
+    "coordinaten": { "lat": 51.5555, "lng": 5.0913 },
+    "oudeCid": 7
+  },
+  {
+    "slug": "regio-zuid-holland",
+    "naam": "Regio Zuid-Holland",
+    "intro": "{{TODO-NL: introtekst regio Zuid-Holland schrijven, nu nog niet ingevuld}}",
+    "isRegio": true,
+    "coordinaten": { "lat": 52.0367, "lng": 4.3239 },
+    "oudeCid": 9
+  },
+  {
+    "slug": "den-haag",
+    "naam": "Den Haag",
+    "intro": "{{TODO-NL: introtekst Den Haag schrijven, nu nog niet ingevuld}}",
+    "isRegio": false,
+    "coordinaten": { "lat": 52.0705, "lng": 4.3007 },
+    "oudeCid": 11
+  },
+  {
+    "slug": "regio-gelderland",
+    "naam": "Regio Gelderland",
+    "intro": "{{TODO-NL: introtekst regio Gelderland schrijven, nu nog niet ingevuld}}",
+    "isRegio": true,
+    "coordinaten": { "lat": 51.8426, "lng": 5.8528 },
+    "oudeCid": 13
+  },
+  {
+    "slug": "utrecht",
+    "naam": "Utrecht",
+    "intro": "{{TODO-NL: introtekst Utrecht schrijven, nu nog niet ingevuld}}",
+    "isRegio": false,
+    "coordinaten": { "lat": 52.0907, "lng": 5.1214 },
+    "oudeCid": 15
+  },
+  {
+    "slug": "heerhugowaard",
+    "naam": "Heerhugowaard",
+    "intro": "{{TODO-NL: introtekst Heerhugowaard schrijven, nu nog niet ingevuld}}",
+    "isRegio": false,
+    "coordinaten": { "lat": 52.6709, "lng": 4.8299 },
+    "oudeCid": 17
+  },
+  {
+    "slug": "zoetermeer",
+    "naam": "Zoetermeer",
+    "intro": "{{TODO-NL: introtekst Zoetermeer schrijven, nu nog niet ingevuld}}",
+    "isRegio": false,
+    "coordinaten": { "lat": 52.0575, "lng": 4.4931 },
+    "oudeCid": 19
+  },
+  {
+    "slug": "almere",
+    "naam": "Almere",
+    "intro": "{{TODO-NL: introtekst Almere schrijven, nu nog niet ingevuld}}",
+    "isRegio": false,
+    "coordinaten": { "lat": 52.3508, "lng": 5.2647 },
+    "oudeCid": 21
+  }
+]

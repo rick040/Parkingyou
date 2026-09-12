@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "dll-garage",
+    "stad": "eindhoven",
+    "naam": "Parking DLL garage",
+    "intro": "Parkeer midden in het centrum van Eindhoven, op loopafstand van de winkels en het Stationsplein.",
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam DLL garage bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Eindhoven"
+    },
+    "coordinaten": { "lat": 51.4381, "lng": 5.4805 },
+    "is24Uur": false,
+    "openingstijden": [],
+    "voorzieningen": ["kentekenherkenning", "camerabewaking", "overdekt"],
+    "maximaleHoogte": null,
+    "aantalPlaatsen": null,
+    "inrit": "Rij de garage binnen; de slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat. Bij een reservering is er niets te betalen bij de paal.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "EIN",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [
+        {
+          "productId": "5",
+          "naam": "Dagtarief",
+          "vanafPrijs": 10.0,
+          "valuta": "EUR",
+          "uitverkocht": false,
+          "boekingUrl": null
+        }
+      ],
+      "vanafPrijs": 10.0,
+      "laatsteSync": "2026-09-12T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 5
+  },
+  {
+    "slug": "td-gebouw",
+    "stad": "eindhoven",
+    "naam": "Parking TD-gebouw",
+    "intro": "Dag en nacht open, op loopafstand van het Van Abbemuseum en het Parktheater.",
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam TD-gebouw bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Eindhoven"
+    },
+    "coordinaten": { "lat": 51.4344, "lng": 5.4823 },
+    "is24Uur": true,
+    "openingstijden": [],
+    "voorzieningen": ["kentekenherkenning", "camerabewaking"],
+    "maximaleHoogte": null,
+    "aantalPlaatsen": null,
+    "inrit": "De garage is 24 uur per dag open. De slagboom gaat open zodra de camera je kenteken herkent.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "EIN",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [
+        {
+          "productId": "17",
+          "naam": "Dagtarief",
+          "vanafPrijs": 10.0,
+          "valuta": "EUR",
+          "uitverkocht": false,
+          "boekingUrl": null
+        }
+      ],
+      "vanafPrijs": 10.0,
+      "laatsteSync": "2026-09-12T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 17
+  },
+  {
+    "slug": "evoluon",
+    "stad": "eindhoven",
+    "naam": "Parking Evoluon",
+    "intro": "Parkeer naast het Evoluon, met Next Nature Museum op loopafstand. Handig als je een congres of evenement bezoekt.",
+    "adres": {
+      "straat": "Noord Brabantlaan",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Eindhoven"
+    },
+    "coordinaten": { "lat": 51.4437, "lng": 5.4469 },
+    "is24Uur": false,
+    "openingstijden": [],
+    "voorzieningen": ["camerabewaking", "kentekenherkenning"],
+    "maximaleHoogte": null,
+    "aantalPlaatsen": null,
+    "inrit": "{{TODO-NL: uitleg inrijden Evoluon schrijven}}",
+    "uitrit": "{{TODO-NL: uitleg uitrijden Evoluon schrijven}}",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "EIN",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [
+        {
+          "productId": "103",
+          "naam": "Uurtarief",
+          "vanafPrijs": 2.0,
+          "valuta": "EUR",
+          "uitverkocht": false,
+          "boekingUrl": null
+        }
+      ],
+      "vanafPrijs": 2.0,
+      "laatsteSync": "2026-09-10T03:00:00.000Z",
+      "syncStatus": "vermist",
+      "syncMelding": "Dit product stond niet in de laatste synchronisatie van Aeroparker. De prijs hieronder is de laatst bekende prijs van 10 september."
+    },
+    "oudeId": 103
+  }
+]

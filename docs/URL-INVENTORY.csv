@@ -3,6 +3,7 @@ https://parkingyou.nl/nl,home,/,/,301,high,Language-prefixed home. New site is D
 https://parkingyou.nl/en,home,/,/,301,open,Blocked on the Dutch-only decision. See docs/IA.md open question 1.
 https://parkingyou.nl/nl/parkeren,search,/locaties,/locaties,301,high,Old booking search entry point.
 https://parkingyou.nl/nl/parkeren/location=7/city=3,search-params,,/locaties,301,high,Search state encoded as path segments. Collapse the whole pattern with one wildcard rule.
+https://parkingyou.nl/nl/parkeren/book-only=1,booking-cta,,/locaties,301,high,Primary Direct reserveren CTA in header and mobile menu. Highest-intent URL on the site. Confirmed from rendered HTML.
 https://parkingyou.nl/nl/locaties,locations-overview,/locaties,/locaties,301,high,
 https://parkingyou.nl/nl/locaties/amsterdam,city,/parkeren/amsterdam,/parkeren/amsterdam,301,high,City page without the cid suffix. Duplicate of the cid variant below.
 https://parkingyou.nl/nl/locaties/amsterdam/cid=1,city,/parkeren/amsterdam,/parkeren/amsterdam,301,high,Canonical-looking city URL in the index. cid=1 is Amsterdam.
@@ -12,7 +13,10 @@ https://parkingyou.nl/nl/locaties/tilburg/cid=7,city,/parkeren/tilburg,/parkeren
 https://parkingyou.nl/nl/locaties/regio-zuid-holland/cid=9,region,/parkeren/regio-zuid-holland,/parkeren/regio-zuid-holland,301,medium,Region rather than city. Covers Ypenburg Rijswijk Schiedam. See IA open question 2.
 https://parkingyou.nl/nl/locaties/utrecht/cid=15,city,/parkeren/utrecht,/parkeren/utrecht,301,high,cid=15 is Utrecht.
 https://parkingyou.nl/nl/locaties/zoetermeer/cid=19,city,/parkeren/zoetermeer,/parkeren/zoetermeer,301,high,cid=19 is Zoetermeer. Seven locations.
-https://parkingyou.nl/nl/locaties/regio-gelderland,region,/parkeren/regio-gelderland,/parkeren/regio-gelderland,301,medium,Region. cid not observed.
+https://parkingyou.nl/nl/locaties/regio-gelderland/cid=13,region,/parkeren/regio-gelderland,/parkeren/regio-gelderland,301,high,cid=13 confirmed from the site footer.
+https://parkingyou.nl/nl/locaties/den-haag/cid=11,city,/parkeren/den-haag,/parkeren/den-haag,301,high,cid=11. Confirmed from the site footer. Missed by the index-derived inventory.
+https://parkingyou.nl/nl/locaties/heerhugowaard/cid=17,city,/parkeren/heerhugowaard,/parkeren/heerhugowaard,301,high,cid=17. Confirmed from the site footer. Missed by the index-derived inventory.
+https://parkingyou.nl/nl/locaties/almere/cid=21,city,/parkeren/almere,/parkeren/almere,301,high,cid=21. Confirmed from the site footer. Missed by the index-derived inventory.
 https://parkingyou.nl/nl/locaties/parkeren-eindhoven,city-alias,,/parkeren/eindhoven,301,high,Second slug for the same city. Splits authority with /locaties/eindhoven. Must 301 not canonical.
 https://parkingyou.nl/nl/locaties/amsterdam/parking-plantage/id=35,location,/parkeren/amsterdam/plantage,/parkeren/amsterdam/plantage,301,high,Aeroparker or CMS id 35 in the path.
 https://parkingyou.nl/nl/locaties/amsterdam/parking-cruquius/id=27,location,/parkeren/amsterdam/cruquius,/parkeren/amsterdam/cruquius,301,high,
@@ -67,7 +71,8 @@ https://parkingyou.nl/nl/klantenservice/nieuws/producten/werken-bij-parkingyou/k
 https://parkingyou.nl/nl/over/parkingyou,about,/over-ons,/over-ons,301,high,
 https://parkingyou.nl/nl/over/contact,contact,/contact,/contact,301,high,
 https://parkingyou.nl/nl/over/vacatures,careers,/werken-bij,/werken-bij,301,high,
-https://parkingyou.nl/nl/klantenservice,support,/klantenservice,/klantenservice,301,high,Becomes the FAQ and contact hub.
+https://parkingyou.nl/nl/over/klantenservice,support,/klantenservice,/klantenservice,301,high,Corrected from rendered HTML. It sits under /over/ not at the root. Becomes the FAQ and contact hub.
+https://parkingyou.nl/nl/over/nieuwsbriefabonnement,newsletter,/nieuwsbrief,/nieuwsbrief,301,high,Confirmed from the site navigation. Missed by the index-derived inventory.
 https://parkingyou.nl/nl/marketing,unknown,,/,301,low,Purpose unclear and it is indexed. Confirm whether it should exist at all.
 https://parkingyou.nl/nl/privacy,legal,/privacybeleid,/privacybeleid,301,high,
 https://parkingyou.nl/nl/cookies,legal,/cookiebeleid,/cookiebeleid,301,high,

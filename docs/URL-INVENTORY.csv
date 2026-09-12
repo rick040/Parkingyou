@@ -1,0 +1,75 @@
+old_url,page_type,proposed_new_url,redirect_target,redirect_type,confidence,notes
+https://parkingyou.nl/nl,home,/,/,301,high,Language-prefixed home. New site is Dutch at the root.
+https://parkingyou.nl/en,home,/,/,301,open,Blocked on the Dutch-only decision. See docs/IA.md open question 1.
+https://parkingyou.nl/nl/parkeren,search,/locaties,/locaties,301,high,Old booking search entry point.
+https://parkingyou.nl/nl/parkeren/location=7/city=3,search-params,,/locaties,301,high,Search state encoded as path segments. Collapse the whole pattern with one wildcard rule.
+https://parkingyou.nl/nl/locaties,locations-overview,/locaties,/locaties,301,high,
+https://parkingyou.nl/nl/locaties/amsterdam,city,/parkeren/amsterdam,/parkeren/amsterdam,301,high,City page without the cid suffix. Duplicate of the cid variant below.
+https://parkingyou.nl/nl/locaties/amsterdam/cid=1,city,/parkeren/amsterdam,/parkeren/amsterdam,301,high,Canonical-looking city URL in the index. cid=1 is Amsterdam.
+https://parkingyou.nl/nl/locaties/eindhoven/cid=3,city,/parkeren/eindhoven,/parkeren/eindhoven,301,high,cid=3 is Eindhoven.
+https://parkingyou.nl/nl/locaties/rotterdam/cid=5,city,/parkeren/rotterdam,/parkeren/rotterdam,301,high,cid=5 is Rotterdam.
+https://parkingyou.nl/nl/locaties/tilburg/cid=7,city,/parkeren/tilburg,/parkeren/tilburg,301,high,cid=7 is Tilburg.
+https://parkingyou.nl/nl/locaties/regio-zuid-holland/cid=9,region,/parkeren/regio-zuid-holland,/parkeren/regio-zuid-holland,301,medium,Region rather than city. Covers Ypenburg Rijswijk Schiedam. See IA open question 2.
+https://parkingyou.nl/nl/locaties/utrecht/cid=15,city,/parkeren/utrecht,/parkeren/utrecht,301,high,cid=15 is Utrecht.
+https://parkingyou.nl/nl/locaties/zoetermeer/cid=19,city,/parkeren/zoetermeer,/parkeren/zoetermeer,301,high,cid=19 is Zoetermeer. Seven locations.
+https://parkingyou.nl/nl/locaties/regio-gelderland,region,/parkeren/regio-gelderland,/parkeren/regio-gelderland,301,medium,Region. cid not observed.
+https://parkingyou.nl/nl/locaties/parkeren-eindhoven,city-alias,,/parkeren/eindhoven,301,high,Second slug for the same city. Splits authority with /locaties/eindhoven. Must 301 not canonical.
+https://parkingyou.nl/nl/locaties/amsterdam/parking-plantage/id=35,location,/parkeren/amsterdam/plantage,/parkeren/amsterdam/plantage,301,high,Aeroparker or CMS id 35 in the path.
+https://parkingyou.nl/nl/locaties/amsterdam/parking-cruquius/id=27,location,/parkeren/amsterdam/cruquius,/parkeren/amsterdam/cruquius,301,high,
+https://parkingyou.nl/nl/locaties/amsterdam/parking-zeeburgerkade/id=45,location,/parkeren/amsterdam/zeeburgerkade,/parkeren/amsterdam/zeeburgerkade,301,high,
+https://parkingyou.nl/nl/locaties/amsterdam/parking-bos-en-lommerplantsoen/id=21,location,/parkeren/amsterdam/bos-en-lommerplantsoen,/parkeren/amsterdam/bos-en-lommerplantsoen,301,high,
+https://parkingyou.nl/nl/locaties/amsterdam/parking-b-amsterdam-b1/id=23,location,/parkeren/amsterdam/b-amsterdam-b1,/parkeren/amsterdam/b-amsterdam-b1,301,high,
+https://parkingyou.nl/nl/locaties/amsterdam/amsterdam-parking-b2/id=67,location,/parkeren/amsterdam/b-amsterdam-b2,/parkeren/amsterdam/b-amsterdam-b2,301,high,
+https://parkingyou.nl/nl/locaties/amsterdam-parking-b2/id=67,location-malformed,,/parkeren/amsterdam/b-amsterdam-b2,301,high,Same page reachable without the city segment. Duplicate content.
+https://parkingyou.nl/nl/locaties/amsterdam/parking-delflandplein/id=65,location,/parkeren/amsterdam/delflandplein,/parkeren/amsterdam/delflandplein,301,high,
+https://parkingyou.nl/nl/locaties/eindhoven/parking-dll-garage-centrum/id=5,location,/parkeren/eindhoven/dll-garage,/parkeren/eindhoven/dll-garage,301,high,
+https://parkingyou.nl/nl/locaties/eindhoven/parking-dll-parkeerdek-centrum/id=101,location,/parkeren/eindhoven/dll-parkeerdek,/parkeren/eindhoven/dll-parkeerdek,301,high,
+https://parkingyou.nl/nl/locaties/eindhoven/parking-onyx/id=25,location,/parkeren/eindhoven/victoriapark,/parkeren/eindhoven/victoriapark,301,medium,Slug says onyx but the page title says Victoriapark. Confirm the current trading name before freezing the slug.
+https://parkingyou.nl/nl/locaties/eindhoven/parking-evoluon/id=103,location,/parkeren/eindhoven/evoluon,/parkeren/eindhoven/evoluon,301,high,
+https://parkingyou.nl/nl/locaties/eindhoven/parking-hoog-stratum/id=97,location,/parkeren/eindhoven/hoog-stratum,/parkeren/eindhoven/hoog-stratum,301,high,
+https://parkingyou.nl/nl/locaties/eindhoven/parking-philips-bedrijfsschool/id=31,location,/parkeren/eindhoven/philips-bedrijfsschool,/parkeren/eindhoven/philips-bedrijfsschool,301,high,Title still shows the voordeligparkeren.nl brand.
+https://parkingyou.nl/nl/locaties/parkeren-eindhoven/parking-stadskantoor/id=37,location,/parkeren/eindhoven/stadskantoor,/parkeren/eindhoven/stadskantoor,301,high,Reached through the alias city slug.
+https://parkingyou.nl/nl/locaties/parkeren-eindhoven/parking-td-gebouw/id=17,location,/parkeren/eindhoven/td-gebouw,/parkeren/eindhoven/td-gebouw,301,high,Reached through the alias city slug.
+https://parkingyou.nl/nl/locaties/rotterdam/parking-shopping-center/id=1,location,/parkeren/rotterdam/alexandrium,/parkeren/rotterdam/alexandrium,301,medium,Generic slug. Confirm the trading name.
+https://parkingyou.nl/nl/locaties/rotterdam/parking-hofplein/id=9,location,/parkeren/rotterdam/hofplein,/parkeren/rotterdam/hofplein,301,high,
+https://parkingyou.nl/nl/locaties/rotterdam/parking-europoint/id=11,location,/parkeren/rotterdam/europoint,/parkeren/rotterdam/europoint,301,high,
+https://parkingyou.nl/locaties/parking-spoorzone-p1-tilburg/id=3,location-malformed,,/parkeren/tilburg/spoorzone-p1,301,high,No language prefix and no city segment. Proves the old CMS emits several shapes for one page.
+https://parkingyou.nl/nl/locaties/regio-zuid-holland/parking-at-the-park/id=53,location,/parkeren/regio-zuid-holland/at-the-park,/parkeren/regio-zuid-holland/at-the-park,301,high,Kessler Park Rijswijk.
+https://parkingyou.nl/nl/locaties/regio-gelderland/parking-lentse-plas/id=59,location,/parkeren/regio-gelderland/lentse-plas,/parkeren/regio-gelderland/lentse-plas,301,high,
+https://parkingyou.nl/nl/locaties/regio-gelderland/parkingyou-pathe-ede-/id=61,location,/parkeren/regio-gelderland/pathe-ede,/parkeren/regio-gelderland/pathe-ede,301,high,Trailing hyphen in the old slug.
+https://parkingyou.nl/nl/lp/waardekaarten-voor-gratis-parkeren,poi-landing,/zakelijk/waardekaarten,/zakelijk/waardekaarten,301,medium,Filed under lp but it is a product page not a POI page.
+https://parkingyou.nl/nl/lp/vergelijk-parkeertarieven-en-kies-de-beste-deal-in-amsterdam,poi-landing,/parkeren/amsterdam/tarieven,/parkeren/amsterdam/tarieven,301,medium,Comparison landing page per city.
+https://parkingyou.nl/nl/lp/vergelijk-parkeertarieven-en-kies-de-beste-deal-in-rotterdam,poi-landing,/parkeren/rotterdam/tarieven,/parkeren/rotterdam/tarieven,301,medium,
+https://parkingyou.nl/nl/abonnementen,product,/abonnementen,/abonnementen,301,high,
+https://parkingyou.nl/nl/strippenkaarten,product,/parkingpass,/parkingpass,301,high,ParkingPass. Old slug is strippenkaarten.
+https://parkingyou.nl/nl/strippenkaarten/location=5/credits=25,product-params,,/parkingpass,301,high,Product configuration in the path. Collapse with a wildcard.
+https://parkingyou.nl/nl/alles-over-onze-parkeeroplossingen,content,/parkeeroplossingen,/parkeeroplossingen,301,medium,Overlaps zakelijk. Consider folding in rather than keeping.
+https://parkingyou.nl/nl/zakelijk,business,/zakelijk,/zakelijk,301,high,
+https://parkingyou.nl/nl/zakelijk/zakelijk-beheer-voor-vastgoedeigenaren,business,/zakelijk/vastgoedeigenaren,/zakelijk/vastgoedeigenaren,301,high,
+https://parkingyou.nl/nl/zakelijk/voordelige-parkings-voor-uw-luchthavenshuttle,business,/zakelijk/luchthavenshuttle,/zakelijk/luchthavenshuttle,301,high,
+https://parkingyou.nl/nl/zakelijk/waardekaarten,business,/zakelijk/waardekaarten,/zakelijk/waardekaarten,301,high,Merge target for the lp waardekaarten page above.
+https://parkingyou.nl/nl/zakelijk/affiliateprogramma,business,/zakelijk/affiliateprogramma,/zakelijk/affiliateprogramma,301,high,
+https://parkingyou.nl/nl/nieuws,news-index,/nieuws,/nieuws,301,high,
+https://parkingyou.nl/nl/nieuws/parkingyou-breidt-haar-positie-verder-uit-in-amsterdam-/id=107,news,/nieuws/parkingyou-breidt-positie-uit-in-amsterdam,/nieuws/parkingyou-breidt-positie-uit-in-amsterdam,301,high,Trailing hyphen before the id segment.
+https://parkingyou.nl/nl/nieuws/amsterdam-wordt-750-jaar-mijd-de-a10/id=313,news,/nieuws/amsterdam-wordt-750-jaar,/nieuws/amsterdam-wordt-750-jaar,301,high,
+https://parkingyou.nl/nl/nieuws/tip-marathon-eindhoven-/id=241,news,/nieuws/tip-marathon-eindhoven,/nieuws/tip-marathon-eindhoven,301,high,
+https://parkingyou.nl/nl/nieuws/tip-van-de-week-de-leukste-winkelgebieden-in-eindhoven/id=85,news,/nieuws/leukste-winkelgebieden-in-eindhoven,/nieuws/leukste-winkelgebieden-in-eindhoven,301,high,
+https://parkingyou.nl/nl/nieuws/voordelig-parkeren-tijdens-groots-met-een-zachte-g-/id=231,news,/nieuws/parkeren-groots-met-een-zachte-g,/nieuws/parkeren-groots-met-een-zachte-g,301,high,
+https://parkingyou.nl/nl/nieuws/meet-the-team-maak-kennis-met-roel-/id=103,news,/nieuws/meet-the-team-roel,/nieuws/meet-the-team-roel,301,high,
+https://parkingyou.nl/nl/nieuws/wat-wilde-je-vroeger-als-kind-worden-we-vroegen-het-aan-de-parkingyou-collegas-tijdens-hun-trip-naar-ibiza/id=215,news,/nieuws/wat-wilde-je-vroeger-worden,/nieuws/wat-wilde-je-vroeger-worden,301,high,
+https://parkingyou.nl/nl/nieuws/vacature-alert-klantenservice-medewerker/id=285,news,/nieuws/vacature-klantenservice-medewerker,/nieuws/vacature-klantenservice-medewerker,301,high,
+https://parkingyou.nl/nl/nieuws/meet-the-team-maak-kennis-met-marloes-/nieuws,news-malformed,,/nieuws/meet-the-team-marloes,301,high,Article slug with a trailing section segment instead of an id. Crawl trap variant.
+https://parkingyou.nl/nl/news/klantenservice,news-malformed,,/klantenservice,301,high,English section segment inside a Dutch path.
+https://parkingyou.nl/nl/news/klantenservice/p=3,news-pagination,,/klantenservice,301,high,Pagination as a path segment.
+https://parkingyou.nl/nl/news/producten,news-malformed,,/parkeeroplossingen,301,medium,
+https://parkingyou.nl/nl/producten/klantenservice/werken-bij-parkingyou/producten,crawl-trap,,/parkeeroplossingen,301,high,Visited sections accumulate as path segments. Unbounded URL space. See methodology note.
+https://parkingyou.nl/nl/klantenservice/nieuws/producten/werken-bij-parkingyou/klantenservice/team,crawl-trap,,/over-ons/team,301,high,Same trap six segments deep.
+https://parkingyou.nl/nl/over/parkingyou,about,/over-ons,/over-ons,301,high,
+https://parkingyou.nl/nl/over/contact,contact,/contact,/contact,301,high,
+https://parkingyou.nl/nl/over/vacatures,careers,/werken-bij,/werken-bij,301,high,
+https://parkingyou.nl/nl/klantenservice,support,/klantenservice,/klantenservice,301,high,Becomes the FAQ and contact hub.
+https://parkingyou.nl/nl/marketing,unknown,,/,301,low,Purpose unclear and it is indexed. Confirm whether it should exist at all.
+https://parkingyou.nl/nl/privacy,legal,/privacybeleid,/privacybeleid,301,high,
+https://parkingyou.nl/nl/cookies,legal,/cookiebeleid,/cookiebeleid,301,high,
+https://parkingyou.nl/nl/algemene-voorwaarden,legal,/algemene-voorwaarden,/algemene-voorwaarden,301,high,
+https://parkingyou.nl/nl/language=en,language-switch,,/,301,high,Language switcher is an indexable URL and its title still reads Voordeligparkeren.nl. Must not survive.

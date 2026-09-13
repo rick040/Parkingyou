@@ -1,0 +1,197 @@
+[
+  {
+    "slug": "philips-stadion",
+    "stad": "eindhoven",
+    "naam": "Philips Stadion",
+    "intro": "Een slimme keuze voor PSV, Strijp-S en een dag Eindhoven. Reserveer vooraf en rij zonder ticketstress naar binnen.",
+    "soort": "Parkeerterrein",
+    "beoordeling": "4.7",
+    "afbeelding": "https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "8 min lopen naar centrum",
+    "maximaleDoorrijhoogte": "4.50 m (open terrein)",
+    "faciliteiten": [
+      "Cameratoezicht",
+      "Verlichting",
+      "Kentekenherkenning",
+      "Rolstoeltoegankelijk",
+      "Fietsenstalling"
+    ],
+    "betaalmogelijkheden": ["iDEAL", "Creditcard", "PIN", "ParkingYou App", "Contant"],
+    "pois": [
+      { "naam": "Philips Stadion", "soort": "Stadion", "afstand": "5 min lopen" },
+      { "naam": "Strijp-S", "soort": "Cultuur & Horeca", "afstand": "8 min lopen" },
+      { "naam": "Eindhoven Centrum", "soort": "Winkelgebied", "afstand": "12 min lopen" }
+    ],
+    "uren": { "open247": true, "doordeweeks": null, "zaterdag": null, "zondag": null },
+    "reserveerbaar": true,
+    "waardekaart": true,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "Frederiklaan",
+      "huisnummer": "10",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Eindhoven"
+    },
+    "coordinaten": { "lat": 51.4417, "lng": 5.4677 },
+    "aantalPlaatsen": 128,
+    "inrit": "Rij het terrein op; de slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat. Bij een reservering is er niets te betalen bij de paal.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "EIN",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [
+        {
+          "productId": "{{TODO-NL: Aeroparker product ID opvragen}}",
+          "naam": "Dagtarief met reservering",
+          "vanafPrijs": 12.0,
+          "valuta": "EUR",
+          "uitverkocht": false,
+          "boekingUrl": null
+        }
+      ],
+      "tarieven": [
+        { "label": "Per 30 minuten", "prijs": "2,50" },
+        { "label": "Dagtarief zonder reservering", "prijs": "15,00" },
+        { "label": "Dagtarief met reservering", "prijs": "12,00" },
+        { "label": "Evenementtarief", "prijs": "12,00" },
+        { "label": "Avondtarief (na 18:00)", "prijs": "8,00" },
+        { "label": "Weekendtarief", "prijs": "18,00" }
+      ],
+      "vanafPrijs": 5.0,
+      "dagprijs": "5",
+      "laatsteSync": "2026-09-12T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 0
+  },
+  {
+    "slug": "dll-parkeerdek",
+    "stad": "eindhoven",
+    "naam": "Parking DLL parkeerdek",
+    "intro": "Een centrale keuze voor Eindhoven: snel parkeren, korte loopafstand en duidelijke tarieven.",
+    "soort": "Parkeerterrein",
+    "beoordeling": "4.6",
+    "afbeelding": "https://images.unsplash.com/photo-1589820296156-2454bb8a6ad1?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "4 min lopen naar centrum",
+    "maximaleDoorrijhoogte": "4.50 m (open terrein)",
+    "faciliteiten": [
+      "Laadpalen (4x)",
+      "Cameratoezicht",
+      "Verlichting",
+      "Betaalterminal",
+      "Rolstoeltoegankelijk"
+    ],
+    "betaalmogelijkheden": ["iDEAL", "Creditcard", "PIN", "ParkingYou App"],
+    "pois": [
+      { "naam": "Eindhoven Centrum", "soort": "Winkelgebied", "afstand": "4 min lopen" },
+      { "naam": "Heuvel Galerie", "soort": "Shopping", "afstand": "6 min lopen" },
+      { "naam": "Stationsplein", "soort": "OV Hub", "afstand": "10 min lopen" }
+    ],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "06:00 – 23:00",
+      "zaterdag": "07:00 – 23:00",
+      "zondag": "09:00 – 22:00"
+    },
+    "reserveerbaar": true,
+    "waardekaart": true,
+    "strippenkaart": true,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Eindhoven"
+    },
+    "coordinaten": { "lat": 51.4381, "lng": 5.4805 },
+    "aantalPlaatsen": 92,
+    "inrit": "Rij de garage binnen; de slagboom gaat open zodra de camera je kenteken herkent.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "EIN",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [
+        {
+          "productId": "{{TODO-NL: Aeroparker product ID opvragen}}",
+          "naam": "Dagtarief met reservering",
+          "vanafPrijs": 10.0,
+          "valuta": "EUR",
+          "uitverkocht": false,
+          "boekingUrl": null
+        }
+      ],
+      "tarieven": [
+        { "label": "Per 30 minuten", "prijs": "1,25" },
+        { "label": "Dagtarief zonder reservering", "prijs": "12,00" },
+        { "label": "Dagtarief met reservering", "prijs": "10,00" },
+        { "label": "Vroegboekkorting (vóór 09:00)", "prijs": "8,00" },
+        { "label": "Avondtarief (na 18:00)", "prijs": "5,00" }
+      ],
+      "vanafPrijs": 2.5,
+      "dagprijs": "2,50",
+      "laatsteSync": "2026-09-12T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 101
+  },
+  {
+    "slug": "philips-bedrijfsschool",
+    "stad": "eindhoven",
+    "naam": "Parking Philips Bedrijfsschool",
+    "intro": "Voor wie vaak in Eindhoven parkeert en een vaste, voordelige plek zoekt.",
+    "soort": "Parkeerterrein",
+    "beoordeling": "4.5",
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "10 min lopen naar centrum",
+    "maximaleDoorrijhoogte": "4.50 m (open terrein)",
+    "faciliteiten": ["Cameratoezicht", "Verlichting", "Kentekenherkenning"],
+    "betaalmogelijkheden": ["iDEAL", "Creditcard", "PIN", "ParkingYou App"],
+    "pois": [
+      { "naam": "Strijp-S", "soort": "Cultuur & Horeca", "afstand": "6 min lopen" },
+      { "naam": "Eindhoven Centrum", "soort": "Winkelgebied", "afstand": "10 min lopen" }
+    ],
+    "uren": { "open247": true, "doordeweeks": null, "zaterdag": null, "zondag": null },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "Kastanjelaan",
+      "huisnummer": "400",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Eindhoven"
+    },
+    "coordinaten": { "lat": 51.4489, "lng": 5.4571 },
+    "aantalPlaatsen": 138,
+    "inrit": "Het terrein is dag en nacht open. De slagboom gaat open zodra de camera je kenteken herkent.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "EIN",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [
+        {
+          "productId": "31",
+          "naam": "Dagtarief",
+          "vanafPrijs": 1.5,
+          "valuta": "EUR",
+          "uitverkocht": false,
+          "boekingUrl": null
+        }
+      ],
+      "tarieven": [
+        { "label": "Per 30 minuten", "prijs": "0,75" },
+        { "label": "Dagtarief met reservering", "prijs": "7,50" },
+        { "label": "Maandabonnement", "prijs": "{{TODO-NL: prijs bevestigen}}" }
+      ],
+      "vanafPrijs": 1.5,
+      "dagprijs": "1,50",
+      "laatsteSync": "2026-09-10T03:00:00.000Z",
+      "syncStatus": "vermist",
+      "syncMelding": "Dit product stond niet in de laatste synchronisatie van Aeroparker. De prijs hieronder is de laatst bekende prijs van 10 september."
+    },
+    "oudeId": 31
+  }
+]

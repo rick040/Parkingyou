@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+/*
+ * ParkingYou design tokens.
+ *
+ * These are carried over from the rebranding prototype (now in
+ * legacy-prototype/) so the website and the future PWA share one visual
+ * language. Anything that changes here must change there too, which is the
+ * argument for the two projects importing this file rather than copying it.
+ */
+@theme {
+  --color-py-blue: #374e9d;
+  --color-py-mid: #233a89;
+  --color-py-deep: #0d142e;
+  --color-py-aqua: #79cadc;
+  --color-py-orange: #ee7d2c;
+
+  --color-py-paper: #f5f7fb;
+  --color-py-line: #dfe5f0;
+  --color-py-text: #24335f;
+  --color-py-muted: #627092;
+  --color-py-surface: #ffffff;
+
+  /* Status colours, used by the Aeroparker sync states. */
+  --color-py-ok: #1a7a50;
+  --color-py-warn: #ee7d2c;
+  --color-py-error: #b83232;
+
+  --radius-py: 8px;
+  --shadow-py: 0 18px 44px rgba(35, 58, 137, 0.14);
+  --shadow-py-sm: 0 2px 8px rgba(35, 58, 137, 0.1);
+
+  --font-py: var(--font-ubuntu), Arial, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: var(--color-py-surface);
+  color: var(--color-py-text);
+  font-family: var(--font-py);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible focus everywhere. The legacy site removes outlines in places. */
+:focus-visible {
+  outline: 3px solid var(--color-py-blue);
+  outline-offset: 2px;
+}
+
+/*
+ * Map marker styling.
+ *
+ * MapLibre has no InfoWindow, so a price label is a Marker with a custom DOM
+ * element. That is cheaper than the legacy site's two Google InfoWindows per
+ * marker and it is reachable by keyboard.
+ */
+.py-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-py);
+}
+
+.py-marker__price {
+  background: var(--color-py-blue);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 6px 9px;
+  border-radius: var(--radius-py);
+  box-shadow: var(--shadow-py-sm);
+  white-space: nowrap;
+}
+
+.py-marker__pin {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-py-blue);
+  border: 3px solid #fff;
+  box-shadow: var(--shadow-py-sm);
+}
+
+/*
+ * The dimmed state. The legacy site greys a marker when Aeroparker returns no
+ * live price; we keep that behaviour but drive it from a typed result rather
+ * than from string matching on the response.
+ */
+.py-marker--gedimd .py-marker__price {
+  background: var(--color-py-muted);
+  font-weight: 500;
+}
+
+.py-marker--gedimd .py-marker__pin {
+  background: var(--color-py-muted);
+}
+
+.py-marker--actief .py-marker__price {
+  background: var(--color-py-orange);
+}
+
+.py-marker--actief .py-marker__pin {
+  background: var(--color-py-orange);
+}
+
+/* The PDOK attribution is a licence condition, so it must stay legible. */
+.maplibregl-ctrl-attrib {
+  font-family: var(--font-py);
+  font-size: 11px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/*
+ * Skip link. The prototype has no keyboard bypass for its header nav, which is
+ * WCAG 2.2 SC 2.4.1.
+ */
+.py-skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-py-blue);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 0 0 var(--radius-py) 0;
+}
+
+.py-skip-link:focus {
+  left: 0;
+}
+
+/* The prototype's map placeholder box, now holding a real map. */
+.py-detail-map-card__kaart {
+  height: 320px;
+  border-radius: var(--radius-py);
+  overflow: hidden;
+}

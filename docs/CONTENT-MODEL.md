@@ -296,3 +296,72 @@ translation layer. Three files to start: `steden.json`, `locaties.json`,
 `laatsteSync` timestamp, so the templates are built against the shape the sync
 will actually produce, including the `syncStatus: "vermist"` case that Phase 3
 has to render without breaking the page.
+
+## Addendum: fields the prototype's location page requires
+
+The rebranding prototype's garage detail page is the agreed design for
+`locaties`. Rebuilding it surfaced fields this document did not have. They are
+listed here rather than edited in above, so the difference between the plan and
+what the design actually needs stays visible.
+
+Added to `locaties`, all **Redactioneel**:
+
+| Field | Dutch label | Notes |
+| --- | --- | --- |
+| `soort` | Type locatie | Parkeerterrein, Parkeergarage, Ondergrondse garage, Parkeerdak |
+| `beoordeling` | Beoordeling | Shown next to the type badge. Source is unconfirmed, see below |
+| `afbeelding` | Hoofdafbeelding | Currently stock photography, moves to EU object storage in Phase 2 |
+| `loopafstand` | Loopafstand | Free text, e.g. "8 min lopen naar centrum" |
+| `maximaleDoorrijhoogte` | Maximale doorrijhoogte | Was a number, now free text: the prototype writes "4.50 m (open terrein)" |
+| `faciliteiten` | Faciliteiten | Free text list, replacing the fixed `voorzieningen` enum. An editor adding "Laadpalen (6x)" should not need a developer |
+| `betaalmogelijkheden` | Betaalmogelijkheden | iDEAL, Creditcard, PIN, ParkingYou App, Contant |
+| `pois` | POI's in de buurt | naam, soort, afstand. Distinct from `poiPaginas`, which are landing pages |
+| `uren` | Openingstijden | `open247` plus doordeweeks, zaterdag, zondag |
+| `reserveerbaar` | Reserveerbaar | Drives the "Kentekentoegang" row |
+| `waardekaart`, `strippenkaart` | Waardekaart, Strippenkaart | Show or hide the product cards |
+
+Added to the Aeroparker sync block, **Gesynchroniseerd and read-only**:
+
+| Field | Notes |
+| --- | --- |
+| `tarieven` | The tariff table. Prices, so Aeroparker owns them |
+| `dagprijs` | The headline day rate in the orange price blob |
+
+`tarieven` is the one that needs a decision in Phase 3. The prototype's labels
+("Dagtarief zonder reservering", "Vroegboekkorting (vóór 09:00)") are richer
+than `ParkingProductPricingRS` returns, which gives a price per product id and
+duration. Either we map Aeroparker products onto these labels in the sync, or
+the labels become editorial and only the amounts sync. The first keeps one
+source of truth; the second is easier and risks a label drifting from the
+product it describes. Recommendation is the first.
+
+### New collection: `evenementen`
+
+The location page carries an "Evenementen nabij deze locatie" block, which this
+document had no collection for.
+
+| Field | Type | Dutch label |
+| --- | --- | --- |
+| `naam` | text, required | Naam |
+| `slug` | text, required, unique | URL |
+| `soort` | text | Soort, e.g. Festival of Sport |
+| `kleur` | select | Kleur van het label |
+| `datums` | text | Datums |
+| `afbeelding` | upload → media | Afbeelding |
+| `vanafPrijs` | text | Vanafprijs |
+| `locaties` | relationship → locaties, hasMany, required | Geschikte parkeerlocaties |
+
+`locaties` is required for the same reason `poiPaginas.primaireLocatie` is: it
+is what makes the block on the location page a query rather than a hand-kept
+list, so publishing an event makes it appear on every location it names.
+
+### Two facts to confirm before Phase 2
+
+**Where does `beoordeling` come from?** The prototype shows a star rating of
+4.7. If it is a Google rating we cannot store and display it as our own; if it
+is an internal figure it needs a documented source and an update cadence. Until
+that is answered the field stays optional and unpopulated for new locations.
+
+**Is Philips Stadion a ParkingYou location?** It is in the prototype with a full
+record, so it is carried over as-is. It does not appear in the indexed URLs from
+the old site, which is why it needs confirming rather than assuming.

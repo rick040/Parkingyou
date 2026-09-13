@@ -1,29 +1,24 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { KaartProducten } from "@/components/locatie/KaartProducten";
+import { LocatieTabs } from "@/components/locatie/LocatieTabs";
 import { LocatieDetailKaart } from "@/components/LocatieDetailKaart";
-import { TariefBlok } from "@/components/TariefBlok";
+import { PyButton } from "@/components/py/Button";
+import { PyLocationTypeBadge, PyPriceBlob, PySectionIntro } from "@/components/py/Chrome";
+import { Icon } from "@/components/py/Icon";
 import {
   alleLocaties,
+  evenementenBijLocatie,
   locatieBySlug,
-  locatiesInStad,
   stadBySlug,
 } from "@/lib/content";
-import type { Voorziening } from "@/lib/content/types";
 import { bepaalPrijs } from "@/lib/prijs";
 
 interface LocatiePageProps {
   readonly params: Promise<{ readonly stad: string; readonly locatie: string }>;
 }
-
-const VOORZIENING_LABEL: Readonly<Record<Voorziening, string>> = {
-  laadpunt: "Laadpunt voor elektrische auto's",
-  camerabewaking: "Camerabewaking",
-  overdekt: "Overdekt parkeren",
-  invalidenplaats: "Invalidenparkeerplaats",
-  fietsenstalling: "Fietsenstalling",
-  kentekenherkenning: "Kentekenherkenning",
-};
 
 export function generateStaticParams(): Array<{ stad: string; locatie: string }> {
   return alleLocaties().map((locatie) => ({
@@ -47,11 +42,15 @@ export async function generateMetadata({
 }
 
 /**
- * The location page: the reference template for the whole site.
+ * The location page, built to match the rebranding prototype's garage detail
+ * page. Markup and class names follow legacy-prototype/Garages.jsx so the
+ * ported stylesheet in src/styles/prototype.css applies unchanged.
  *
- * Everything that matters to someone deciding where to leave their car is on
- * this page and above the fold on a phone: what it costs, whether it is open,
- * how to get in, and how to book.
+ * What differs from the prototype, deliberately:
+ *   - the price blob and the tariff table read from the Aeroparker snapshot
+ *     rather than from a static object, and a stale snapshot says so;
+ *   - the POI tab shows a real MapLibre map instead of the decorative SVG;
+ *   - hash routes become the real Dutch URLs from docs/IA.md.
  */
 export default async function LocatiePage({ params }: LocatiePageProps) {
   const { stad: stadSlug, locatie: locatieSlug } = await params;
@@ -60,107 +59,133 @@ export default async function LocatiePage({ params }: LocatiePageProps) {
   if (locatie === undefined || stad === undefined) notFound();
 
   const prijs = bepaalPrijs(locatie.aeroparker);
-  const buren = locatiesInStad(stadSlug).filter(
-    (andere) => andere.slug !== locatie.slug,
-  );
+  const evenementen = evenementenBijLocatie(locatie.slug);
 
   return (
-    <main className="mx-auto w-full max-w-4xl px-4 py-6 sm:px-6 sm:py-8">
-      <nav aria-label="Kruimelpad" className="mb-4 text-sm text-py-muted">
-        <Link href="/" className="text-py-blue">
-          Home
-        </Link>
-        <span className="mx-2">/</span>
-        <Link href={`/parkeren/${stad.slug}`} className="text-py-blue">
-          {stad.naam}
-        </Link>
-        <span className="mx-2">/</span>
-        <span>{locatie.naam}</span>
-      </nav>
-
-      <h1 className="m-0 text-2xl font-bold text-py-text sm:text-3xl">
-        {locatie.naam}
-      </h1>
-      <p className="mt-2 mb-0 text-py-muted">{locatie.intro}</p>
-      <p className="mt-1 mb-0 text-sm text-py-muted">
-        {locatie.adres.straat} {locatie.adres.huisnummer}, {locatie.adres.plaats}
-      </p>
-
-      <TariefBlok prijs={prijs} locatieNaam={locatie.naam} />
-
-      <section className="mt-8">
-        <h2 className="m-0 text-lg font-bold text-py-text">Openingstijden</h2>
-        {locatie.is24Uur ? (
-          <p className="mt-2 mb-0 text-py-ok">
-            Deze garage is dag en nacht open, ook op feestdagen.
-          </p>
-        ) : locatie.openingstijden.length === 0 ? (
-          <p className="mt-2 mb-0 text-py-muted">
-            {`{{TODO-NL: openingstijden ${locatie.naam} invullen}}`}
-          </p>
-        ) : (
-          <dl className="mt-2 grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 text-sm">
-            {locatie.openingstijden.map((tijd) => (
-              <div key={tijd.dag} className="contents">
-                <dt className="text-py-muted">{tijd.dag}</dt>
-                <dd className="m-0">
-                  {tijd.van} tot {tijd.tot}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        )}
-      </section>
-
-      <section className="mt-8">
-        <h2 className="m-0 text-lg font-bold text-py-text">Naar binnen en naar buiten</h2>
-        <h3 className="mt-4 mb-1 text-base font-bold text-py-text">Inrijden</h3>
-        <p className="m-0 text-py-muted">{locatie.inrit}</p>
-        <h3 className="mt-4 mb-1 text-base font-bold text-py-text">Uitrijden</h3>
-        <p className="m-0 text-py-muted">{locatie.uitrit}</p>
-      </section>
-
-      {locatie.voorzieningen.length > 0 ? (
-        <section className="mt-8">
-          <h2 className="m-0 text-lg font-bold text-py-text">Voorzieningen</h2>
-          <ul className="mt-2 flex list-none flex-wrap gap-2 p-0">
-            {locatie.voorzieningen.map((voorziening) => (
-              <li
-                key={voorziening}
-                className="rounded-py bg-py-paper px-3 py-2 text-sm text-py-text"
-              >
-                {VOORZIENING_LABEL[voorziening]}
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-
-      <section className="mt-8">
-        <h2 className="m-0 text-lg font-bold text-py-text">Route en bereikbaarheid</h2>
-        <p className="mt-2 mb-4 text-py-muted">{locatie.route}</p>
-        <div className="h-[300px] overflow-hidden rounded-py border border-py-line sm:h-[380px]">
-          <LocatieDetailKaart locatie={locatie} prijs={prijs} />
+    <main>
+      <section className="py-detail-hero">
+        <div className="py-container py-detail-hero__grid">
+          <div>
+            <Link href={`/parkeren/${stad.slug}`} className="py-back-link">
+              ← Alle locaties
+            </Link>
+            <div className="py-detail-hero__meta">
+              <PyLocationTypeBadge type={locatie.soort} />
+              {locatie.beoordeling === null ? null : (
+                <span className="py-detail-hero__rating">
+                  <Icon name="star" size={15} color="#ee7d2c" />{" "}
+                  {locatie.beoordeling}
+                </span>
+              )}
+            </div>
+            <h1>{locatie.naam}</h1>
+            <p>{locatie.intro}</p>
+            <div className="py-detail-quick-facts">
+              {locatie.aantalPlaatsen === null ? null : (
+                <span>
+                  <Icon name="car" size={16} /> {locatie.aantalPlaatsen} plekken
+                </span>
+              )}
+              <span>
+                <Icon name="clock" size={16} />{" "}
+                {locatie.uren.open247 ? "24/7 open" : "Beperkte openingstijden"}
+              </span>
+              <span>
+                <Icon name="pin" size={16} /> {locatie.loopafstand}
+              </span>
+              {locatie.maximaleDoorrijhoogte === null ? null : (
+                <span>
+                  <Icon name="trending" size={16} /> Max.{" "}
+                  {locatie.maximaleDoorrijhoogte}
+                </span>
+              )}
+            </div>
+            <div className="py-detail-actions">
+              {/* {{TODO-NL: deep link naar Aeroparker koppelen, zie docs/BOOKING-LINKS.md in fase 3}} */}
+              <PyButton href="/locaties" variant="primary">
+                Reserveer nu
+              </PyButton>
+              <PyButton href="/locaties" variant="aqua" icon="car">
+                Snel boeken
+              </PyButton>
+              <PyButton href="/klantenservice" variant="outline" icon="phone">
+                Vraag hulp
+              </PyButton>
+            </div>
+          </div>
+          <div className="py-detail-media">
+            {/* {{TODO-NL: echte foto van deze locatie, nu nog een stockbeeld}} */}
+            <Image
+              src={locatie.afbeelding}
+              alt={`Parkeren bij ${locatie.naam}`}
+              width={1200}
+              height={900}
+              priority
+              sizes="(max-width: 900px) 100vw, 560px"
+            />
+            {prijs.soort === "onbekend" || locatie.aeroparker.dagprijs === null ? null : (
+              <PyPriceBlob
+                price={locatie.aeroparker.dagprijs}
+                unit="per dag"
+                tone="orange"
+              />
+            )}
+          </div>
         </div>
       </section>
 
-      {buren.length > 0 ? (
-        <section className="mt-10">
-          <h2 className="m-0 text-lg font-bold text-py-text">
-            Andere garages in {stad.naam}
-          </h2>
-          <ul className="mt-3 flex list-none flex-wrap gap-2 p-0">
-            {buren.map((buur) => (
-              <li key={buur.slug}>
+      <LocatieTabs
+        locatie={locatie}
+        kaart={<LocatieDetailKaart locatie={locatie} prijs={prijs} />}
+      />
+
+      <KaartProducten
+        locatieNaam={locatie.naam}
+        strippenkaart={locatie.strippenkaart}
+        waardekaart={locatie.waardekaart}
+      />
+
+      {evenementen.length > 0 ? (
+        <section className="py-section">
+          <div className="py-container">
+            <PySectionIntro
+              titleBefore="Evenementen "
+              titleEmphasis="nabij"
+              titleAfter=" deze locatie."
+            >
+              Reserveer al je parkeertickets voor aankomende evenementen in de
+              buurt.
+            </PySectionIntro>
+            <div className="py-event-strip">
+              {evenementen.map((evenement) => (
                 <Link
-                  href={`/parkeren/${stad.slug}/${buur.slug}`}
-                  className="inline-block rounded-py border border-py-line px-3 py-2 text-sm text-py-blue no-underline hover:border-py-blue"
+                  key={evenement.slug}
+                  href={`/evenementen/${evenement.slug}`}
+                  className="py-event-mini-card"
                 >
-                  {buur.naam}
+                  <Image
+                    src={evenement.afbeelding}
+                    alt={evenement.naam}
+                    width={400}
+                    height={300}
+                    sizes="120px"
+                  />
+                  <div>
+                    <span
+                      className={`py-event-type py-event-type--${evenement.kleur}`}
+                    >
+                      {evenement.soort}
+                    </span>
+                    <strong>{evenement.naam}</strong>
+                    <small>
+                      <Icon name="calendar" size={13} /> {evenement.datums}
+                    </small>
+                    <small>Vanaf € {evenement.vanafPrijs}</small>
+                  </div>
                 </Link>
-              </li>
-            ))}
-          </ul>
+              ))}
+            </div>
+          </div>
         </section>
       ) : null}
     </main>

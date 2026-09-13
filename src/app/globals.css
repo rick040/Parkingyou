@@ -126,3 +126,29 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/*
+ * Skip link. The prototype has no keyboard bypass for its header nav, which is
+ * WCAG 2.2 SC 2.4.1.
+ */
+.py-skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-py-blue);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 0 0 var(--radius-py) 0;
+}
+
+.py-skip-link:focus {
+  left: 0;
+}
+
+/* The prototype's map placeholder box, now holding a real map. */
+.py-detail-map-card__kaart {
+  height: 320px;
+  border-radius: var(--radius-py);
+  overflow: hidden;
+}

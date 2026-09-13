@@ -13,9 +13,9 @@ const outDir = process.argv[3] ?? "screenshots";
 const pages = [
   { naam: "home", pad: "/" },
   { naam: "stad-eindhoven", pad: "/parkeren/eindhoven" },
-  { naam: "locatie-td-gebouw", pad: "/parkeren/eindhoven/td-gebouw" },
-  { naam: "locatie-evoluon-vermist", pad: "/parkeren/eindhoven/evoluon" },
-  { naam: "stad-amsterdam-leeg", pad: "/parkeren/amsterdam" },
+  { naam: "locatie-philips-stadion", pad: "/parkeren/eindhoven/philips-stadion" },
+  { naam: "locatie-dll-parkeerdek", pad: "/parkeren/eindhoven/dll-parkeerdek" },
+  { naam: "locatie-philips-bedrijfsschool-vermist", pad: "/parkeren/eindhoven/philips-bedrijfsschool" },
 ];
 
 await mkdir(outDir, { recursive: true });

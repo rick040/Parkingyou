@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
+import "@/styles/prototype.css";
+import { PyHeader } from "@/components/py/Header";
+import { PyFooter } from "@/components/py/Footer";
 
 /*
  * Self-hosted via next/font. The legacy site loads Ubuntu from
@@ -40,7 +43,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="nl">
-      <body className={ubuntu.variable}>{children}</body>
+      <body className={ubuntu.variable}>
+        <a href="#inhoud" className="py-skip-link">
+          Naar de inhoud
+        </a>
+        <PyHeader />
+        <div id="inhoud">{children}</div>
+        <PyFooter />
+      </body>
     </html>
   );
 }

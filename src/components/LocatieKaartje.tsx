@@ -62,7 +62,7 @@ export function LocatieKaartje({ item, actief, onHover }: LocatieKaartjeProps) {
         </div>
       </div>
 
-      {locatie.is24Uur ? (
+      {locatie.uren.open247 ? (
         <p className="mt-3 mb-0 text-sm text-py-ok">Dag en nacht open</p>
       ) : null}
 

@@ -1,6 +1,7 @@
+import evenementenData from "../../../content/evenementen.json";
 import locatiesData from "../../../content/locaties.json";
 import stedenData from "../../../content/steden.json";
-import type { Locatie, Stad } from "./types";
+import type { Evenement, Locatie, Stad } from "./types";
 
 /**
  * Phase 1 content source: typed mock JSON. No CMS, no database.
@@ -11,6 +12,7 @@ import type { Locatie, Stad } from "./types";
 
 const steden: readonly Stad[] = stedenData as readonly Stad[];
 const locaties: readonly Locatie[] = locatiesData as readonly Locatie[];
+const evenementen: readonly Evenement[] = evenementenData as readonly Evenement[];
 
 export function alleSteden(): readonly Stad[] {
   return steden;
@@ -45,4 +47,18 @@ export function locatieBySlug(
   );
 }
 
-export type { Locatie, Stad };
+/**
+ * Events near a location.
+ *
+ * A query rather than a list on the location, so publishing an event makes it
+ * appear on every location it names without an editor touching those pages.
+ */
+export function evenementenBijLocatie(
+  locatieSlug: string,
+): readonly Evenement[] {
+  return evenementen.filter((evenement) =>
+    evenement.locatieSlugs.includes(locatieSlug),
+  );
+}
+
+export type { Evenement, Locatie, Stad };

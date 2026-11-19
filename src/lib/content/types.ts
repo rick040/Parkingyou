@@ -124,6 +124,15 @@ export interface Locatie {
    * round the back of the building, so the two are kept apart on purpose.
    */
   readonly coordinaten: Coordinaat;
+  /**
+   * True while the pin is a best guess rather than a surveyed point.
+   *
+   * 20 of the 23 locations were reconstructed from the old site's indexed URLs,
+   * which give a real name, city and id but no coordinates. Rather than present
+   * invented precision as fact, the map shows these and the data says they are
+   * approximate. Clearing the flag is a job for whoever has the real addresses.
+   */
+  readonly coordinatenBijBenadering: boolean;
   readonly aantalPlaatsen: number | null;
   readonly inrit: string;
   readonly uitrit: string;

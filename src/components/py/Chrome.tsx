@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { Icon } from "./Icon";
 
@@ -6,16 +7,27 @@ interface LogoProps {
 }
 
 export function PyLogo({ inverted = false }: LogoProps) {
+  /*
+   * The real brand logo from rick040/py-assets
+   * (svg/atom/py-atom-logo-horizontal-{color,white}.svg), not the prototype's
+   * approximation, which drew a blue circle with a letter P in it and set the
+   * wordmark in live text. The wordmark is outlines in the official file, so it
+   * no longer depends on the font loading.
+   *
+   * The tagline stays live text rather than using py-atom-text-tagline, which
+   * is a live-text SVG and would need the font anyway. Its tracking is the
+   * measured +60/1000 em from the brand repository.
+   */
   return (
-    <span
-      className={`py-logo ${inverted ? "py-logo--inverted" : ""}`.trim()}
-      aria-label="ParkingYou"
-    >
-      <span className="py-logo__mark">P</span>
-      <span>
-        <strong>ParkingYou</strong>
-        <small>The other way of parking</small>
-      </span>
+    <span className="py-logo" aria-label="ParkingYou">
+      <Image
+        src={inverted ? "/brand/horizontal-white.svg" : "/brand/horizontal-color.svg"}
+        alt=""
+        width={92}
+        height={25}
+        priority
+        className="py-logo__mark-svg"
+      />
     </span>
   );
 }

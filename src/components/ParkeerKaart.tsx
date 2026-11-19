@@ -2,10 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Map as MapLibreMap, Marker } from "maplibre-gl";
-// Required. Without it markers get no absolute positioning and stack below the
-// canvas instead of sitting on it, and the controls and attribution are
-// unstyled. It is a static import so it lands in the CSS bundle rather than
-// arriving after the dynamically imported map.
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { Coordinaat } from "@/lib/content/types";
 import type { LocatieMetPrijs } from "@/lib/prijs";
@@ -24,6 +20,11 @@ interface ParkeerKaartProps {
   readonly locaties: readonly LocatieMetPrijs[];
   readonly actieveSlug: string | null;
   readonly onSelecteer: (slug: string) => void;
+  /**
+   * Collapse the price into a compact pin below this many locations on screen.
+   * The national view has 23 pins; 23 price labels at once is unreadable.
+   */
+  readonly compactVanaf?: number;
 }
 
 /**
@@ -42,6 +43,7 @@ export function ParkeerKaart({
   locaties,
   actieveSlug,
   onSelecteer,
+  compactVanaf = 8,
 }: ParkeerKaartProps) {
   const houderRef = useRef<HTMLDivElement | null>(null);
   const kaartRef = useRef<MapLibreMap | null>(null);
@@ -56,15 +58,18 @@ export function ParkeerKaart({
     selecteerRef.current = onSelecteer;
   }, [onSelecteer]);
 
+  // Rebuild when the set of locations changes, not just the centre: the
+  // /locaties page filters by city, so the same centre can carry a new set.
+  const sleutel = locaties.map((l) => l.locatie.slug).join(",");
+
   useEffect(() => {
     const houder = houderRef.current;
     if (houder === null) return;
 
     let afgebroken = false;
     let kaart: MapLibreMap | null = null;
-    // Captured here so the cleanup closes over this map, not over whatever
-    // markersRef happens to point at when the effect tears down.
     const markers = markersRef.current;
+    const compact = locaties.length > compactVanaf;
 
     // Dynamic import keeps MapLibre out of the initial bundle. It is a large
     // library and no page needs it before hydration.
@@ -88,7 +93,7 @@ export function ParkeerKaart({
             {
               id: "achtergrond",
               type: "background",
-              paint: { "background-color": "#f5f7fb" },
+              paint: { "background-color": "#f4f6fb" },
             },
             { id: "pdok", type: "raster", source: "pdok" },
           ],
@@ -101,23 +106,16 @@ export function ParkeerKaart({
       });
 
       kaartRef.current = kaart;
-
       kaart.addControl(new maplibre.NavigationControl({ showCompass: false }), "top-right");
 
       kaart.on("load", () => {
         if (!afgebroken) setGeladen(true);
       });
 
-      /*
-       * If PDOK is unreachable the map still renders on the background colour
-       * and the markers stay usable. A parking map that loses its basemap is
-       * degraded; one that throws is broken.
-       */
       kaart.on("error", (event: { sourceId?: string; error?: { message?: string } }) => {
         // Key on the source id rather than on the wording of the message.
         // MapLibre's tile errors do not reliably contain the word "tile", so
-        // matching on the text silently never fires, which is exactly what the
-        // first version of this did.
+        // matching on the text silently never fires.
         if (event.sourceId === "pdok" && !afgebroken) {
           setTegelsMislukt(true);
         }
@@ -126,15 +124,21 @@ export function ParkeerKaart({
       for (const { locatie, prijs } of locaties) {
         const element = document.createElement("button");
         element.type = "button";
-        element.className = `py-marker${prijs.gedimd ? " py-marker--gedimd" : ""}`;
+        element.className = [
+          "py-marker",
+          compact ? "py-marker--compact" : "",
+          prijs.gedimd ? "py-marker--gedimd" : "",
+        ]
+          .filter(Boolean)
+          .join(" ");
         element.setAttribute(
           "aria-label",
-          `${locatie.naam}, ${markerLabel(prijs)}`,
+          `${locatie.naam}, ${locatie.adres.plaats}, ${markerLabel(prijs)}`,
         );
 
         const label = document.createElement("span");
         label.className = "py-marker__price";
-        label.textContent = markerLabel(prijs);
+        label.textContent = compact ? locatie.naam : markerLabel(prijs);
 
         const pin = document.createElement("span");
         pin.className = "py-marker__pin";
@@ -159,9 +163,6 @@ export function ParkeerKaart({
        * Evoluon sits about 2.5 km west of the centre and disappears entirely.
        * The legacy site has the same call, `map.fitBounds(bounds)`, but it is
        * commented out.
-       *
-       * Padding is asymmetric on purpose: a marker's price label sits above its
-       * pin, so the top needs more room than the bottom.
        */
       if (locaties.length > 1) {
         const grenzen = new maplibre.LngLatBounds();
@@ -173,7 +174,7 @@ export function ParkeerKaart({
          * centred on its point and runs to roughly 110px wide, so without
          * horizontal room the outermost labels are clipped by the map edge.
          */
-        const halveLabelBreedte = 64;
+        const halveLabelBreedte = compact ? 48 : 64;
         kaart.fitBounds(grenzen, {
           padding: {
             top: 64,
@@ -193,10 +194,8 @@ export function ParkeerKaart({
       kaart?.remove();
       kaartRef.current = null;
     };
-    // The map is built once per city. Price changes are applied by the effect
-    // below, which mutates the existing markers instead of remounting.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [middelpunt.lat, middelpunt.lng]);
+  }, [middelpunt.lat, middelpunt.lng, sleutel, compactVanaf]);
 
   // Highlight the selected location and pan to it.
   useEffect(() => {

@@ -2,6 +2,10 @@
 
 import { useState } from "react";
 import { Icon } from "@/components/py/Icon";
+import {
+  Pictogram,
+  pictogramVoorFaciliteit,
+} from "@/components/py/Pictogram";
 import { PyButton } from "@/components/py/Button";
 import type { Locatie } from "@/lib/content/types";
 
@@ -14,16 +18,18 @@ const TABS: ReadonlyArray<{ readonly id: TabId; readonly label: string }> = [
   { id: "pois", label: "POI's & omgeving" },
 ];
 
-/** The prototype's PYFacilityIcon, matching on the Dutch facility label. */
+/**
+ * The facility symbol.
+ *
+ * The prototype matched facility labels onto its own hand-drawn icon set. These
+ * are the official pictograms instead, so the symbol on the page matches the
+ * sign at the garage entrance. Where the brand has no pictogram for a label,
+ * a neutral check mark stands in rather than a wrong symbol.
+ */
 function FaciliteitIcon({ naam }: { readonly naam: string }) {
-  if (naam.startsWith("Laadpalen")) return <Icon name="ev" size={18} />;
-  if (naam.startsWith("Lift")) return <Icon name="elevator" size={18} />;
-  if (naam.startsWith("Camera")) return <Icon name="camera" size={18} />;
-  if (naam.startsWith("Bewaking")) return <Icon name="shield" size={18} />;
-  if (naam.startsWith("Fiets")) return <Icon name="bicycle" size={18} />;
-  if (naam.startsWith("Toilet")) return <Icon name="info" size={18} />;
-  if (naam.includes("OV") || naam.includes("loket")) return <Icon name="map" size={18} />;
-  return <Icon name="check" size={18} />;
+  const picto = pictogramVoorFaciliteit(naam);
+  if (picto === null) return <Icon name="check" size={18} />;
+  return <Pictogram name={picto} size={22} />;
 }
 
 interface LocatieTabsProps {

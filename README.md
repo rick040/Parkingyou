@@ -39,8 +39,35 @@ node scripts/screenshots.mjs http://127.0.0.1:3111 screenshots
 | `src/lib/prijs.ts` | The typed price result that replaces the legacy string-sniffing. |
 | `src/lib/kaart-config.ts` | Map tiles and attribution. One file to switch tile source. |
 | `src/components/ParkeerKaart.tsx` | MapLibre map with price markers. |
+| `public/brand/`, `public/pictogrammen/` | Logos and pictograms from the brand repository, see below. |
+| `src/fonts/` | Ubuntu, the brand typeface, self-hosted under the Ubuntu Font Licence. |
+| `src/lib/aeroparker/` | The booking deep-link builder: the only way this codebase hands a customer to Aeroparker. |
 | `docs/` | Phase 0 planning documents and the legacy behaviour analysis. |
 | `legacy-prototype/` | The pre-rebuild static prototype, kept for reference. Not built, not deployed. |
+
+## Brand assets
+
+Logos, pictograms, colours and the typeface come from
+[rick040/py-assets](https://github.com/rick040/PY-ASSETS), which is the extract
+of the ParkingYou huisstijlhandboek (Wayfinding & inrichting parkeervoorziening
+v1.0, 09-2025). `src/lib/brand-tokens.json` is a copy of that repository's
+`tokens.json` so every colour in `globals.css` can be traced to a handbook page
+without leaving this repo.
+
+Brand colours are the handbook's 1.3 values and are not to be eyeballed:
+
+| Token | Hex | Name |
+| --- | --- | --- |
+| `--color-py-blue` | `#1A3580` | PY-Blauw |
+| `--color-py-aqua` | `#32B9CD` | PY-Aqua |
+| `--color-py-orange` | `#F08300` | PY-Oranje |
+| `--color-py-grijs` | `#AEAEAE` | PY-Grijs |
+| `--color-py-zwart` | `#1D1D1B` | PY-Zwart |
+
+Not shipped from that repository, on purpose: the payment marks, the RVV road
+signs and the escape-route symbols. The brand repo tags them `third-party` and
+says to source the official files. Shipping Mastercard or Maestro artwork out of
+a handbook extract is a trademark problem.
 
 ## Language rule
 

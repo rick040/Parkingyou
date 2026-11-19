@@ -1,70 +1,467 @@
 [
   {
-    "slug": "philips-stadion",
-    "stad": "eindhoven",
-    "naam": "Philips Stadion",
-    "intro": "Een slimme keuze voor PSV, Strijp-S en een dag Eindhoven. Reserveer vooraf en rij zonder ticketstress naar binnen.",
-    "soort": "Parkeerterrein",
-    "beoordeling": "4.7",
-    "afbeelding": "https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?auto=format&fit=crop&w=1200&q=85",
-    "loopafstand": "8 min lopen naar centrum",
-    "maximaleDoorrijhoogte": "4.50 m (open terrein)",
+    "slug": "b-amsterdam-b1",
+    "stad": "amsterdam",
+    "naam": "Parking B. Amsterdam (B1)",
+    "intro": "Voordelig parkeren in Amsterdam Nieuw-West bij B. Amsterdam.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
     "faciliteiten": [
-      "Cameratoezicht",
-      "Verlichting",
       "Kentekenherkenning",
-      "Rolstoeltoegankelijk",
-      "Fietsenstalling"
+      "Cameratoezicht"
     ],
-    "betaalmogelijkheden": ["iDEAL", "Creditcard", "PIN", "ParkingYou App", "Contant"],
-    "pois": [
-      { "naam": "Philips Stadion", "soort": "Stadion", "afstand": "5 min lopen" },
-      { "naam": "Strijp-S", "soort": "Cultuur & Horeca", "afstand": "8 min lopen" },
-      { "naam": "Eindhoven Centrum", "soort": "Winkelgebied", "afstand": "12 min lopen" }
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
     ],
-    "uren": { "open247": true, "doordeweeks": null, "zaterdag": null, "zondag": null },
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
     "reserveerbaar": true,
-    "waardekaart": true,
+    "waardekaart": false,
     "strippenkaart": false,
     "adres": {
-      "straat": "Frederiklaan",
-      "huisnummer": "10",
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
       "postcode": "{{TODO-NL: postcode bevestigen}}",
-      "plaats": "Eindhoven"
+      "plaats": "Amsterdam"
     },
-    "coordinaten": { "lat": 51.4417, "lng": 5.4677 },
-    "aantalPlaatsen": 128,
-    "inrit": "Rij het terrein op; de slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
-    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat. Bij een reservering is er niets te betalen bij de paal.",
+    "coordinaten": {
+      "lat": 52.3576,
+      "lng": 4.8178
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
     "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
     "aeroparker": {
-      "site": "EIN",
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
       "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
-      "producten": [
-        {
-          "productId": "{{TODO-NL: Aeroparker product ID opvragen}}",
-          "naam": "Dagtarief met reservering",
-          "vanafPrijs": 12.0,
-          "valuta": "EUR",
-          "uitverkocht": false,
-          "boekingUrl": null
-        }
-      ],
-      "tarieven": [
-        { "label": "Per 30 minuten", "prijs": "2,50" },
-        { "label": "Dagtarief zonder reservering", "prijs": "15,00" },
-        { "label": "Dagtarief met reservering", "prijs": "12,00" },
-        { "label": "Evenementtarief", "prijs": "12,00" },
-        { "label": "Avondtarief (na 18:00)", "prijs": "8,00" },
-        { "label": "Weekendtarief", "prijs": "18,00" }
-      ],
-      "vanafPrijs": 5.0,
-      "dagprijs": "5",
-      "laatsteSync": "2026-09-12T03:00:00.000Z",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": 15.0,
+      "dagprijs": "15",
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
       "syncStatus": "ok",
       "syncMelding": null
     },
-    "oudeId": 0
+    "oudeId": 23
+  },
+  {
+    "slug": "b-amsterdam-b2",
+    "stad": "amsterdam",
+    "naam": "Parking B. Amsterdam (B2)",
+    "intro": "Parkeren aan het John M. Keynesplein in Amsterdam Nieuw-West.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Amsterdam"
+    },
+    "coordinaten": {
+      "lat": 52.3572,
+      "lng": 4.8183
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": 15.0,
+      "dagprijs": "15",
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 67
+  },
+  {
+    "slug": "bos-en-lommerplantsoen",
+    "stad": "amsterdam",
+    "naam": "Parking Bos en Lommerplantsoen",
+    "intro": "Parkeren in Amsterdam-West, met 168 plekken in de wijk Bos en Lommer.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Amsterdam"
+    },
+    "coordinaten": {
+      "lat": 52.3787,
+      "lng": 4.8505
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": 168,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": 15.0,
+      "dagprijs": "15",
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 21
+  },
+  {
+    "slug": "cruquius",
+    "stad": "amsterdam",
+    "naam": "Parking Cruquius",
+    "intro": "Dag en nacht open, naast The Harbour Club in Amsterdam-Oost.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": true,
+      "doordeweeks": null,
+      "zaterdag": null,
+      "zondag": null
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Amsterdam"
+    },
+    "coordinaten": {
+      "lat": 52.3718,
+      "lng": 4.9448
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": 15.0,
+      "dagprijs": "15",
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 27
+  },
+  {
+    "slug": "delflandplein",
+    "stad": "amsterdam",
+    "naam": "Parking Delflandplein",
+    "intro": "Parkeren aan het Delflandplein in Amsterdam Nieuw-West.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Amsterdam"
+    },
+    "coordinaten": {
+      "lat": 52.3448,
+      "lng": 4.8442
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": 15.0,
+      "dagprijs": "15",
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 65
+  },
+  {
+    "slug": "plantage",
+    "stad": "amsterdam",
+    "naam": "Parking Plantage",
+    "intro": "Parkeer in het centrum van Amsterdam, naast Artis.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Amsterdam"
+    },
+    "coordinaten": {
+      "lat": 52.3667,
+      "lng": 4.9132
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": 15.0,
+      "dagprijs": "15",
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 35
+  },
+  {
+    "slug": "zeeburgerkade",
+    "stad": "amsterdam",
+    "naam": "Parking Zeeburgerkade",
+    "intro": "Makkelijk parkeren in Amsterdam-Oost, vlak bij The Harbour Club.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Amsterdam"
+    },
+    "coordinaten": {
+      "lat": 52.3706,
+      "lng": 4.9466
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": 15.0,
+      "dagprijs": "15",
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 45
+  },
+  {
+    "slug": "dll-garage",
+    "stad": "eindhoven",
+    "naam": "Parking DLL garage",
+    "intro": "Parkeer midden in het centrum van Eindhoven.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Eindhoven"
+    },
+    "coordinaten": {
+      "lat": 51.4378,
+      "lng": 5.4812
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": 10.0,
+      "dagprijs": "10",
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 5
   },
   {
     "slug": "dll-parkeerdek",
@@ -83,11 +480,28 @@
       "Betaalterminal",
       "Rolstoeltoegankelijk"
     ],
-    "betaalmogelijkheden": ["iDEAL", "Creditcard", "PIN", "ParkingYou App"],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
     "pois": [
-      { "naam": "Eindhoven Centrum", "soort": "Winkelgebied", "afstand": "4 min lopen" },
-      { "naam": "Heuvel Galerie", "soort": "Shopping", "afstand": "6 min lopen" },
-      { "naam": "Stationsplein", "soort": "OV Hub", "afstand": "10 min lopen" }
+      {
+        "naam": "Eindhoven Centrum",
+        "soort": "Winkelgebied",
+        "afstand": "4 min lopen"
+      },
+      {
+        "naam": "Heuvel Galerie",
+        "soort": "Shopping",
+        "afstand": "6 min lopen"
+      },
+      {
+        "naam": "Stationsplein",
+        "soort": "OV Hub",
+        "afstand": "10 min lopen"
+      }
     ],
     "uren": {
       "open247": false,
@@ -104,7 +518,10 @@
       "postcode": "{{TODO-NL: postcode bevestigen}}",
       "plaats": "Eindhoven"
     },
-    "coordinaten": { "lat": 51.4381, "lng": 5.4805 },
+    "coordinaten": {
+      "lat": 51.4381,
+      "lng": 5.4805
+    },
     "aantalPlaatsen": 92,
     "inrit": "Rij de garage binnen; de slagboom gaat open zodra de camera je kenteken herkent.",
     "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
@@ -123,11 +540,26 @@
         }
       ],
       "tarieven": [
-        { "label": "Per 30 minuten", "prijs": "1,25" },
-        { "label": "Dagtarief zonder reservering", "prijs": "12,00" },
-        { "label": "Dagtarief met reservering", "prijs": "10,00" },
-        { "label": "Vroegboekkorting (vóór 09:00)", "prijs": "8,00" },
-        { "label": "Avondtarief (na 18:00)", "prijs": "5,00" }
+        {
+          "label": "Per 30 minuten",
+          "prijs": "1,25"
+        },
+        {
+          "label": "Dagtarief zonder reservering",
+          "prijs": "12,00"
+        },
+        {
+          "label": "Dagtarief met reservering",
+          "prijs": "10,00"
+        },
+        {
+          "label": "Vroegboekkorting (vóór 09:00)",
+          "prijs": "8,00"
+        },
+        {
+          "label": "Avondtarief (na 18:00)",
+          "prijs": "5,00"
+        }
       ],
       "vanafPrijs": 2.5,
       "dagprijs": "2,50",
@@ -135,7 +567,124 @@
       "syncStatus": "ok",
       "syncMelding": null
     },
-    "oudeId": 101
+    "oudeId": 101,
+    "coordinatenBijBenadering": true
+  },
+  {
+    "slug": "evoluon",
+    "stad": "eindhoven",
+    "naam": "Parking Evoluon",
+    "intro": "Parkeer naast het Evoluon, met Next Nature Museum op loopafstand.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Eindhoven"
+    },
+    "coordinaten": {
+      "lat": 51.4437,
+      "lng": 5.4469
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": 2.0,
+      "dagprijs": "2",
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 103
+  },
+  {
+    "slug": "hoog-stratum",
+    "stad": "eindhoven",
+    "naam": "Parking Hoog Stratum",
+    "intro": "Parkeren bij Hoog Stratum, op loopafstand van het centrum van Eindhoven.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Eindhoven"
+    },
+    "coordinaten": {
+      "lat": 51.433,
+      "lng": 5.4818
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": 10.0,
+      "dagprijs": "10",
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 97
   },
   {
     "slug": "philips-bedrijfsschool",
@@ -147,13 +696,35 @@
     "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
     "loopafstand": "10 min lopen naar centrum",
     "maximaleDoorrijhoogte": "4.50 m (open terrein)",
-    "faciliteiten": ["Cameratoezicht", "Verlichting", "Kentekenherkenning"],
-    "betaalmogelijkheden": ["iDEAL", "Creditcard", "PIN", "ParkingYou App"],
-    "pois": [
-      { "naam": "Strijp-S", "soort": "Cultuur & Horeca", "afstand": "6 min lopen" },
-      { "naam": "Eindhoven Centrum", "soort": "Winkelgebied", "afstand": "10 min lopen" }
+    "faciliteiten": [
+      "Cameratoezicht",
+      "Verlichting",
+      "Kentekenherkenning"
     ],
-    "uren": { "open247": true, "doordeweeks": null, "zaterdag": null, "zondag": null },
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [
+      {
+        "naam": "Strijp-S",
+        "soort": "Cultuur & Horeca",
+        "afstand": "6 min lopen"
+      },
+      {
+        "naam": "Eindhoven Centrum",
+        "soort": "Winkelgebied",
+        "afstand": "10 min lopen"
+      }
+    ],
+    "uren": {
+      "open247": true,
+      "doordeweeks": null,
+      "zaterdag": null,
+      "zondag": null
+    },
     "reserveerbaar": true,
     "waardekaart": false,
     "strippenkaart": false,
@@ -163,7 +734,10 @@
       "postcode": "{{TODO-NL: postcode bevestigen}}",
       "plaats": "Eindhoven"
     },
-    "coordinaten": { "lat": 51.4489, "lng": 5.4571 },
+    "coordinaten": {
+      "lat": 51.4489,
+      "lng": 5.4571
+    },
     "aantalPlaatsen": 138,
     "inrit": "Het terrein is dag en nacht open. De slagboom gaat open zodra de camera je kenteken herkent.",
     "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
@@ -182,9 +756,18 @@
         }
       ],
       "tarieven": [
-        { "label": "Per 30 minuten", "prijs": "0,75" },
-        { "label": "Dagtarief met reservering", "prijs": "7,50" },
-        { "label": "Maandabonnement", "prijs": "{{TODO-NL: prijs bevestigen}}" }
+        {
+          "label": "Per 30 minuten",
+          "prijs": "0,75"
+        },
+        {
+          "label": "Dagtarief met reservering",
+          "prijs": "7,50"
+        },
+        {
+          "label": "Maandabonnement",
+          "prijs": "{{TODO-NL: prijs bevestigen}}"
+        }
       ],
       "vanafPrijs": 1.5,
       "dagprijs": "1,50",
@@ -192,6 +775,699 @@
       "syncStatus": "vermist",
       "syncMelding": "Dit product stond niet in de laatste synchronisatie van Aeroparker. De prijs hieronder is de laatst bekende prijs van 10 september."
     },
-    "oudeId": 31
+    "oudeId": 31,
+    "coordinatenBijBenadering": true
+  },
+  {
+    "slug": "stadskantoor",
+    "stad": "eindhoven",
+    "naam": "Parking Stadskantoor",
+    "intro": "Parkeren bij het stadskantoor van Eindhoven.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Eindhoven"
+    },
+    "coordinaten": {
+      "lat": 51.4389,
+      "lng": 5.4784
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": 10.0,
+      "dagprijs": "10",
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 37
+  },
+  {
+    "slug": "td-gebouw",
+    "stad": "eindhoven",
+    "naam": "Parking TD-gebouw",
+    "intro": "Dag en nacht open, op loopafstand van het Van Abbemuseum en het Parktheater.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": true,
+      "doordeweeks": null,
+      "zaterdag": null,
+      "zondag": null
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Eindhoven"
+    },
+    "coordinaten": {
+      "lat": 51.4344,
+      "lng": 5.4823
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": 10.0,
+      "dagprijs": "10",
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 17
+  },
+  {
+    "slug": "victoriapark",
+    "stad": "eindhoven",
+    "naam": "Parking Victoriapark",
+    "intro": "Parkeren bij het Victoriapark in Eindhoven.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Eindhoven"
+    },
+    "coordinaten": {
+      "lat": 51.4408,
+      "lng": 5.4635
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": null,
+      "dagprijs": null,
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "fout",
+      "syncMelding": "Er is nog geen Aeroparker-koppeling voor deze locatie, dus we tonen hier nog geen prijs."
+    },
+    "oudeId": 25
+  },
+  {
+    "slug": "philips-stadion",
+    "stad": "eindhoven",
+    "naam": "Philips Stadion",
+    "intro": "Een slimme keuze voor PSV, Strijp-S en een dag Eindhoven. Reserveer vooraf en rij zonder ticketstress naar binnen.",
+    "soort": "Parkeerterrein",
+    "beoordeling": "4.7",
+    "afbeelding": "https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "8 min lopen naar centrum",
+    "maximaleDoorrijhoogte": "4.50 m (open terrein)",
+    "faciliteiten": [
+      "Cameratoezicht",
+      "Verlichting",
+      "Kentekenherkenning",
+      "Rolstoeltoegankelijk",
+      "Fietsenstalling"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App",
+      "Contant"
+    ],
+    "pois": [
+      {
+        "naam": "Philips Stadion",
+        "soort": "Stadion",
+        "afstand": "5 min lopen"
+      },
+      {
+        "naam": "Strijp-S",
+        "soort": "Cultuur & Horeca",
+        "afstand": "8 min lopen"
+      },
+      {
+        "naam": "Eindhoven Centrum",
+        "soort": "Winkelgebied",
+        "afstand": "12 min lopen"
+      }
+    ],
+    "uren": {
+      "open247": true,
+      "doordeweeks": null,
+      "zaterdag": null,
+      "zondag": null
+    },
+    "reserveerbaar": true,
+    "waardekaart": true,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "Frederiklaan",
+      "huisnummer": "10",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Eindhoven"
+    },
+    "coordinaten": {
+      "lat": 51.4417,
+      "lng": 5.4677
+    },
+    "aantalPlaatsen": 128,
+    "inrit": "Rij het terrein op; de slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat. Bij een reservering is er niets te betalen bij de paal.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "EIN",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [
+        {
+          "productId": "{{TODO-NL: Aeroparker product ID opvragen}}",
+          "naam": "Dagtarief met reservering",
+          "vanafPrijs": 12.0,
+          "valuta": "EUR",
+          "uitverkocht": false,
+          "boekingUrl": null
+        }
+      ],
+      "tarieven": [
+        {
+          "label": "Per 30 minuten",
+          "prijs": "2,50"
+        },
+        {
+          "label": "Dagtarief zonder reservering",
+          "prijs": "15,00"
+        },
+        {
+          "label": "Dagtarief met reservering",
+          "prijs": "12,00"
+        },
+        {
+          "label": "Evenementtarief",
+          "prijs": "12,00"
+        },
+        {
+          "label": "Avondtarief (na 18:00)",
+          "prijs": "8,00"
+        },
+        {
+          "label": "Weekendtarief",
+          "prijs": "18,00"
+        }
+      ],
+      "vanafPrijs": 5.0,
+      "dagprijs": "5",
+      "laatsteSync": "2026-09-12T03:00:00.000Z",
+      "syncStatus": "ok",
+      "syncMelding": null
+    },
+    "oudeId": 0,
+    "coordinatenBijBenadering": true
+  },
+  {
+    "slug": "lentse-plas",
+    "stad": "regio-gelderland",
+    "naam": "Parking Lentse Plas",
+    "intro": "Parkeren bij de Lentse Plas, net boven Nijmegen.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Nijmegen"
+    },
+    "coordinaten": {
+      "lat": 51.86,
+      "lng": 5.87
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": null,
+      "dagprijs": null,
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "fout",
+      "syncMelding": "Er is nog geen Aeroparker-koppeling voor deze locatie, dus we tonen hier nog geen prijs."
+    },
+    "oudeId": 59
+  },
+  {
+    "slug": "pathe-ede",
+    "stad": "regio-gelderland",
+    "naam": "ParkingYou Pathé Ede",
+    "intro": "Parkeren bij Pathé Ede.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Ede"
+    },
+    "coordinaten": {
+      "lat": 52.04,
+      "lng": 5.67
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": null,
+      "dagprijs": null,
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "fout",
+      "syncMelding": "Er is nog geen Aeroparker-koppeling voor deze locatie, dus we tonen hier nog geen prijs."
+    },
+    "oudeId": 61
+  },
+  {
+    "slug": "at-the-park",
+    "stad": "regio-zuid-holland",
+    "naam": "Parking At the Park",
+    "intro": "Parkeren bij Kessler Park in Rijswijk.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Rijswijk"
+    },
+    "coordinaten": {
+      "lat": 52.04,
+      "lng": 4.32
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": null,
+      "dagprijs": null,
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "fout",
+      "syncMelding": "Er is nog geen Aeroparker-koppeling voor deze locatie, dus we tonen hier nog geen prijs."
+    },
+    "oudeId": 53
+  },
+  {
+    "slug": "alexandrium",
+    "stad": "rotterdam",
+    "naam": "Parking Alexandrium",
+    "intro": "Parkeren bij het Alexandrium winkelcentrum in Rotterdam.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Rotterdam"
+    },
+    "coordinaten": {
+      "lat": 51.9527,
+      "lng": 4.554
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": null,
+      "dagprijs": null,
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "fout",
+      "syncMelding": "Er is nog geen Aeroparker-koppeling voor deze locatie, dus we tonen hier nog geen prijs."
+    },
+    "oudeId": 1
+  },
+  {
+    "slug": "europoint",
+    "stad": "rotterdam",
+    "naam": "Parking Europoint",
+    "intro": "Parkeren bij de Europoint-torens in Rotterdam-West.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Rotterdam"
+    },
+    "coordinaten": {
+      "lat": 51.9064,
+      "lng": 4.4452
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": null,
+      "dagprijs": null,
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "fout",
+      "syncMelding": "Er is nog geen Aeroparker-koppeling voor deze locatie, dus we tonen hier nog geen prijs."
+    },
+    "oudeId": 11
+  },
+  {
+    "slug": "hofplein",
+    "stad": "rotterdam",
+    "naam": "Parking Hofplein",
+    "intro": "Parkeren aan het Hofplein, midden in Rotterdam.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Rotterdam"
+    },
+    "coordinaten": {
+      "lat": 51.9256,
+      "lng": 4.4776
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": null,
+      "dagprijs": null,
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "fout",
+      "syncMelding": "Er is nog geen Aeroparker-koppeling voor deze locatie, dus we tonen hier nog geen prijs."
+    },
+    "oudeId": 9
+  },
+  {
+    "slug": "spoorzone-p1",
+    "stad": "tilburg",
+    "naam": "Parking Spoorzone P1",
+    "intro": "Parkeren in de Spoorzone, aan de zuidkant van het centrum van Tilburg.",
+    "soort": "Parkeergarage",
+    "beoordeling": null,
+    "afbeelding": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85",
+    "loopafstand": "{{TODO-NL: loopafstand naar het centrum bevestigen}}",
+    "maximaleDoorrijhoogte": null,
+    "faciliteiten": [
+      "Kentekenherkenning",
+      "Cameratoezicht"
+    ],
+    "betaalmogelijkheden": [
+      "iDEAL",
+      "Creditcard",
+      "PIN",
+      "ParkingYou App"
+    ],
+    "pois": [],
+    "uren": {
+      "open247": false,
+      "doordeweeks": "{{TODO-NL: openingstijden invullen}}",
+      "zaterdag": "{{TODO-NL: openingstijden invullen}}",
+      "zondag": "{{TODO-NL: openingstijden invullen}}"
+    },
+    "reserveerbaar": true,
+    "waardekaart": false,
+    "strippenkaart": false,
+    "adres": {
+      "straat": "{{TODO-NL: straatnaam bevestigen}}",
+      "huisnummer": "{{TODO-NL: huisnummer bevestigen}}",
+      "postcode": "{{TODO-NL: postcode bevestigen}}",
+      "plaats": "Tilburg"
+    },
+    "coordinaten": {
+      "lat": 51.5606,
+      "lng": 5.083
+    },
+    "coordinatenBijBenadering": true,
+    "aantalPlaatsen": null,
+    "inrit": "De slagboom gaat open zodra de camera je kenteken herkent. Heb je gereserveerd, dan hoef je verder niets te doen.",
+    "uitrit": "Rijd naar de uitrit en wacht tot de slagboom opengaat.",
+    "route": "{{TODO-NL: routebeschrijving vanaf de snelweg schrijven}}",
+    "aeroparker": {
+      "site": "{{TODO-NL: Aeroparker site bevestigen}}",
+      "carParkId": "{{TODO-NL: Aeroparker CarPark ID opvragen}}",
+      "producten": [],
+      "tarieven": [],
+      "vanafPrijs": null,
+      "dagprijs": null,
+      "laatsteSync": "2026-11-19T03:00:00.000Z",
+      "syncStatus": "fout",
+      "syncMelding": "Er is nog geen Aeroparker-koppeling voor deze locatie, dus we tonen hier nog geen prijs."
+    },
+    "oudeId": 3
   }
 ]

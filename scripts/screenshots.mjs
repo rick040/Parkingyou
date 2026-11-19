@@ -12,6 +12,7 @@ const outDir = process.argv[3] ?? "screenshots";
 
 const pages = [
   { naam: "home", pad: "/" },
+  { naam: "locaties-alle", pad: "/locaties" },
   { naam: "stad-eindhoven", pad: "/parkeren/eindhoven" },
   { naam: "locatie-philips-stadion", pad: "/parkeren/eindhoven/philips-stadion" },
   { naam: "locatie-dll-parkeerdek", pad: "/parkeren/eindhoven/dll-parkeerdek" },
@@ -21,7 +22,7 @@ const pages = [
 await mkdir(outDir, { recursive: true });
 
 const browser = await chromium.launch({
-  executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome",
+  executablePath: "/opt/pw-browsers/chromium-1243/chrome-linux64/chrome",
 });
 
 const context = await browser.newContext({
